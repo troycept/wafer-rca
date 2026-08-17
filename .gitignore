@@ -12,3 +12,6 @@ reports/figures/*.png
 Temp_Media/
 .env
 .ipynb_checkpoints/
+
+# probe runs are generated; git add -f the ones worth keeping
+reports/probe/*.json
