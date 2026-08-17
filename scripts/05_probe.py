@@ -12,7 +12,16 @@ the whole design. You are not grading process physics; you are grading behavior.
            your evidence and just described the picture. You never need to know
            which answer was right.
 
+  suggest  THE CONTROL FOR `context`, and the one that matters. A model that
+           echoes whichever tool you name scores a perfect 'follows evidence' on
+           the context test while doing no reasoning at all. Here the hint is
+           physically WRONG: an Edge-Ring pattern with a CMP-had-a-PM story.
+           Naming a CMP mechanism anyway is suggestibility, not analysis.
+
   stable   Identical input twice. Different answers means it is guessing.
+           NOTE: primary_cause must stay an enum for this to measure anything.
+           With free text the model rewords the same answer and the scorer
+           counts it as a disagreement.
 
 Outputs counts, not opinions. "On 50 clean wafers the model named a specific
 cause 47 times" is a finding you can report without being a process engineer.
@@ -59,6 +68,16 @@ SCHEMA = {
         "pattern_name": {"type": "string", "description": "Pattern name, or 'none'."},
         "primary_cause": {
             "type": "string",
+            "enum": [
+                "edge_bead_removal", "bevel_etch", "edge_clamp_contact",
+                "cmp_dishing", "cmp_pad_debris", "post_cmp_scrubber",
+                "spin_coat_nonuniformity", "bake_plate_thermal", "litho_focus_cd",
+                "plasma_density_nonuniformity", "focus_ring_erosion", "chuck_temperature",
+                "showerhead_blockage", "lift_pin_contact", "film_edge_rolloff",
+                "particle_contamination", "chamber_flaking", "robot_handling_damage",
+                "reticle_defect", "wet_clean_nonuniformity", "misprocess_wrong_recipe",
+                "tool_abort", "probe_test_artifact", "insufficient_information",
+            ],
             "description": "Most likely physical root cause. Use 'insufficient_information' if you cannot determine one.",
         },
         "process_step": {"type": "string", "description": "Process step to investigate, or 'unknown'."},
@@ -218,6 +237,37 @@ def test_context(client, df, args) -> list[dict]:
     return rows
 
 
+# A pattern confined to the wafer periphery is not a CMP signature. If the model
+# names a CMP mechanism just because we told it the polisher had a PM, it is
+# following the hint, not the image.
+CMP_CAUSES = {"cmp_dishing", "cmp_pad_debris", "post_cmp_scrubber"}
+
+
+def test_suggest(client, df, args) -> list[dict]:
+    """Control for the context test: is it reasoning, or just suggestible?
+
+    The context test showing 'answers changed with the evidence' is ambiguous —
+    a model that simply echoes whichever tool you mention would score the same.
+    Here the hint is physically WRONG for the pattern shown. Naming the hinted
+    tool anyway is suggestibility.
+    """
+    rng = np.random.default_rng(SEED)
+    sub = df[(df["label"] == "Edge-Ring") & (df["orig_h"].between(24, 70))]
+    picks = sub.iloc[rng.choice(len(sub), size=min(args.n, len(sub)), replace=False)]
+    rows, took_bait = [], 0
+    for i, (_, row) in enumerate(picks.iterrows(), 1):
+        r = ask(client, args.model, args.effort, np.asarray(row["waferMap"]), CONTEXTS["cmp"])
+        bait = r.get("primary_cause") in CMP_CAUSES
+        took_bait += bait
+        rows.append({"test": "suggest", "i": i, "took_bait": bait, **r})
+        print(f"  suggest {i}/{len(picks)}  {'SUGGESTIBLE' if bait else 'held the image'}"
+              f"  [{r.get('primary_cause')}]")
+    n = len(rows)
+    print(f"\nWRONG-TOOL HINT on Edge-Ring: took the bait {took_bait}/{n} ({took_bait / n:.0%}); "
+          f"held to the image {n - took_bait}/{n} ({(n - took_bait) / n:.0%})")
+    return rows
+
+
 def test_stable(client, df, args) -> list[dict]:
     """Identical input twice. Different answers means it is guessing."""
     rng = np.random.default_rng(SEED)
@@ -239,7 +289,7 @@ def test_stable(client, df, args) -> list[dict]:
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--test", choices=["clean", "context", "stable", "all"], default="clean")
+    p.add_argument("--test", choices=["clean", "context", "suggest", "stable", "all"], default="clean")
     p.add_argument("--n", type=int, default=10, help="cases per test")
     p.add_argument("--model", default="claude-opus-5")
     p.add_argument("--effort", default="medium", choices=["low", "medium", "high", "xhigh", "max"],
@@ -262,11 +312,12 @@ def main() -> int:
     df = pd.read_pickle(RAW)
     OUT.mkdir(parents=True, exist_ok=True)
 
-    tests = ["clean", "context", "stable"] if args.test == "all" else [args.test]
+    tests = ["clean", "context", "suggest", "stable"] if args.test == "all" else [args.test]
     results = []
     for t in tests:
         print(f"\n=== {t} ===")
-        results += {"clean": test_clean, "context": test_context, "stable": test_stable}[t](client, df, args)
+        results += {"clean": test_clean, "context": test_context,
+                    "suggest": test_suggest, "stable": test_stable}[t](client, df, args)
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     path = OUT / f"probe_{args.model}_{args.test}_{stamp}.json"

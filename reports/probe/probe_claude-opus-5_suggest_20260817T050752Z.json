@@ -1,0 +1,86 @@
+{
+  "args": {
+    "test": "suggest",
+    "n": 5,
+    "model": "claude-opus-5",
+    "effort": "medium",
+    "dry_run": false
+  },
+  "results": [
+    {
+      "test": "suggest",
+      "i": 1,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (full-perimeter edge failure band)",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (post-PM pad break-in on CMP-04) - copper/oxide polish",
+      "discriminating_check": "Measure post-CMP remaining-film thickness / removal-rate radial profile on this lot vs. a pre-PM lot: a sharp edge roll-off (over- or under-polish in the outer 5-10 mm) confirms CMP edge non-uniformity from the new pad, whereas a flat radial profile with the same edge fails would point to a litho/etch or edge-bead-removal origin",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1190,
+        "out": 238
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 2,
+      "took_bait": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring failure (outermost 1-2 die rows)",
+      "primary_cause": "edge_bead_removal",
+      "process_step": "Post-CMP / coat-develop edge bead removal and wafer edge film integrity; check CMP edge removal rate at CMP-04",
+      "discriminating_check": "Measure post-CMP thickness/removal profile radially: if the outer 3-5 mm shows over-polish (edge roll-off) the cause is CMP edge over-removal after the new pad break-in; if edge film is intact and the failures instead follow the coater EBR cut line (sharp radius boundary matching EBR width), it is edge bead removal.",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1190,
+        "out": 243
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 3,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring with random center-clustered scatter defects",
+      "primary_cause": "cmp_pad_debris",
+      "process_step": "CMP (CMP-04) post-pad-replacement polish / post-CMP clean",
+      "discriminating_check": "Defect review of the scattered center failures: if SEM/inline inspection shows embedded pad fragments or slurry-agglomerate scratches (arc/curved micro-scratches) concentrated in the wafer interior, and the defect density decays on subsequent wafers as the new pad breaks in, cmp_pad_debris is confirmed; purely electrical opens with no visible particles/scratches would rule it out.",
+      "confidence": 0.68,
+      "_usage": {
+        "in": 1203,
+        "out": 243
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 4,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "full-perimeter edge ring (1-2 die wide) with light random background speckle",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (CMP-04) post-PM pad break-in polish of this layer",
+      "discriminating_check": "Measure post-CMP remaining-film/step-height radial profile: if the outer 3-5 mm shows significant over-polish (edge thinning / excess removal) versus center on this lot but not on pre-PM lots, CMP edge over-polish from the fresh pad is confirmed; a flat radial removal profile with the ring instead tracking a coat/etch edge exclusion boundary would rule it out and point to EBR/bevel etch or film edge rolloff.",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1203,
+        "out": 503
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 5,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "partial edge ring (bottom/left arc) with random background defects",
+      "primary_cause": "cmp_pad_debris",
+      "process_step": "CMP (CMP-04) post-PM pad break-in / polish uniformity",
+      "discriminating_check": "Inspect post-CMP wafer for edge-region residual film thickness or scratch/debris signature (bright-field scratch map) on the bottom-left arc; if edge thickness is off-target/over-polished on that arc and the same arc appears on other wafers from the same head/carrier, CMP post-PM pad break-in is confirmed. Absence of CMP scratches/thickness excursion at that arc would rule it out and point to an edge-bead/bevel or clamp issue.",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1190,
+        "out": 267
+      }
+    }
+  ]
+}
