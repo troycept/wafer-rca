@@ -1,0 +1,77 @@
+# WaferRCA knowledge base
+#
+# THIS FILE IS THE PROJECT. Everything else is scaffolding around it.
+#
+# Rules for filling it in:
+#   1. Write from memory FIRST. Do not look anything up on the first pass, and
+#      do not let a model draft it. A model produces fluent, plausible, subtly
+#      wrong process knowledge, and wrong is worse than empty here.
+#   2. Then verify against May & Spanos and semiengineering.com, and mark what
+#      you changed. Confidence field tracks that.
+#   3. Target 3-5 causes per pattern, 9 patterns, ~35 records.
+#
+# Field meanings:
+#   mechanism     the physical thing that went wrong, not the symptom
+#   step          where in the flow you go to look
+#   parameters    the specific knobs/logs to pull
+#   check         what you physically do first, in order
+#   discriminator the observation that separates THIS cause from the others in
+#                 this list. If it does not rule anything out, it is not a
+#                 discriminator, it is just another check.
+#   signature     how it behaves over time / across tools / across lots
+#   confidence    from_memory | verified | uncertain
+#
+# The discriminator field is the one nobody publishes and the reason this file
+# is worth releasing.
+
+patterns:
+  - pattern: Edge-Ring
+    physics: radial non-uniformity concentrated at the wafer periphery
+    causes:
+      - mechanism: edge bead removal failure
+        step: litho track, EBR
+        parameters: [nozzle_offset, dispense_time, spin_speed]
+        check: measure EBR width on last 3 lots, pull nozzle offset log
+        discriminator: EBR width out of spec confirms it
+        signature: follows the track, not the lot
+        confidence: from_memory
+      - mechanism: bevel etch rate excursion
+        step: bevel etch
+        parameters: [chamber_pressure, rf_power, time_since_pm]
+        check: chamber match data, last PM date
+        discriminator: pattern follows tool ID across lots
+        signature: gradual onset over days, not a step change
+        confidence: from_memory
+      # TODO: 1-3 more. Edge clamp / chuck contact at anneal is one you named.
+
+  - pattern: Center
+    physics: # TODO
+    causes: []
+
+  - pattern: Donut
+    physics: # TODO
+    causes: []
+
+  - pattern: Edge-Loc
+    physics: # TODO
+    causes: []
+
+  - pattern: Loc
+    physics: # TODO
+    causes: []
+
+  - pattern: Random
+    physics: # TODO
+    causes: []
+
+  - pattern: Scratch
+    physics: # TODO
+    causes: []
+
+  - pattern: Near-full
+    physics: # TODO
+    causes: []
+
+  - pattern: none
+    physics: no systematic spatial signature; failures are within normal random yield loss
+    causes: []

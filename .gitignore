@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/
+data/processed/
+reports/figures/*.png
+# keep the two figures the README and posts refer to
+!reports/figures/reference_cases.png
+!reports/figures/class_balance.png
+
+# personal build/strategy notes, not for a public repo
+Temp_Media/
+.env
+.ipynb_checkpoints/
