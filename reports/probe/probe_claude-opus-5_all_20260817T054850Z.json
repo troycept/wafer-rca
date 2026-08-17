@@ -1,0 +1,2741 @@
+{
+  "args": {
+    "test": "all",
+    "n": 30,
+    "model": "claude-opus-5",
+    "effort": "medium",
+    "dry_run": false
+  },
+  "results": [
+    {
+      "test": "clean",
+      "i": 1,
+      "lot": "lot45784",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and zonal fail-rate statistics (edge vs center bins) plus nearest-neighbor clustering index; a uniform random distribution with no significant edge or cluster enrichment across multiple wafers in the lot confirms random defect-limited yield rather than a systematic mechanism.",
+      "confidence": 0.72,
+      "_usage": {
+        "in": 1136,
+        "out": 168
+      }
+    },
+    {
+      "test": "clean",
+      "i": 2,
+      "lot": "lot46336",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Overlay defect inspection maps (KLA) with the bin map across the lot: if failing die coordinates are non-repeating lot-to-lot and correlate with randomly distributed particles, it is random defectivity rather than a systematic tool signature; a repeating radial/edge or reticle-field-aligned grouping would indicate otherwise.",
+      "confidence": 0.72,
+      "_usage": {
+        "in": 1136,
+        "out": 182
+      }
+    },
+    {
+      "test": "clean",
+      "i": 3,
+      "lot": "lot45120",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and edge-zone fail rates (e.g., outermost 2 die rings vs center) plus nearest-neighbor clustering statistic across the lot; if edge and center rates are statistically equal and no clustering above Poisson expectation, random defectivity is confirmed and no spatial mechanism applies.",
+      "confidence": 0.75,
+      "_usage": {
+        "in": 1136,
+        "out": 169
+      }
+    },
+    {
+      "test": "clean",
+      "i": 4,
+      "lot": "lot44499",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Run a radial/zonal bin-density analysis (center vs mid vs edge annulus) plus a clustering test (e.g., Moran's I or nearest-neighbor index) across the lot; if failure density is statistically uniform and no die-to-die clustering exceeds random expectation, random defectivity is confirmed rather than a spatial signature.",
+      "confidence": 0.7,
+      "_usage": {
+        "in": 1123,
+        "out": 184
+      }
+    },
+    {
+      "test": "clean",
+      "i": 5,
+      "lot": "lot46022",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compare radial and zonal fail-rate binning (center vs mid vs edge ring) across the full lot; if edge-ring fail rate is statistically indistinguishable from center and defects show no repeating reticle-field coordinates, the scatter is confirmed as random defect-limited yield loss rather than a systematic signature.",
+      "confidence": 0.7,
+      "_usage": {
+        "in": 1136,
+        "out": 176
+      }
+    },
+    {
+      "test": "clean",
+      "i": 6,
+      "lot": "lot42836",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial fail-rate binning (center vs mid-radius vs outer 3 rows) and a nearest-neighbor clustering statistic across multiple wafers in the lot: if outer-annulus fail rate is not statistically higher than center and fails pass a spatial randomness (Poisson/Moran's I) test, this is baseline random defectivity rather than a systematic edge or clustered signature.",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1149,
+        "out": 415
+      }
+    },
+    {
+      "test": "clean",
+      "i": 7,
+      "lot": "lot47335",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Radial-zone binning of fail rate (center vs mid vs edge) plus lot-level stacking: if edge-zone fail rate is statistically indistinguishable from center and no repeating cluster appears across wafers, the loss is random defectivity rather than a systematic spatial signature.",
+      "confidence": 0.68,
+      "_usage": {
+        "in": 1123,
+        "out": 164
+      }
+    },
+    {
+      "test": "clean",
+      "i": 8,
+      "lot": "lot44119",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none (random defect scatter, with one isolated right-side row streak)",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Overlay bin codes and check whether the short contiguous run of failures along one row at the right edge repeats at the same row/column coordinates on other wafers in the lot (would indicate a probe-card/touchdown or scratch signature); otherwise the failure distribution is statistically random (no radial, edge, or center trend) and consistent with baseline random defect limited yield.",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1136,
+        "out": 428
+      }
+    },
+    {
+      "test": "clean",
+      "i": 9,
+      "lot": "lot46971",
+      "abstained": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (peripheral failure band)",
+      "primary_cause": "edge_bead_removal",
+      "process_step": "photoresist coat / edge bead removal and edge exposure at litho track",
+      "discriminating_check": "Radial binning of fail rate: if failures concentrate within the outermost 2-3 die rows (>3x center rate) and coincide with an EBR/film-thickness rolloff measured by ellipsometry near the wafer edge, EBR/film edge rolloff is confirmed; a uniform radial distribution would rule it out and point to random defectivity",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1136,
+        "out": 214
+      }
+    },
+    {
+      "test": "clean",
+      "i": 10,
+      "lot": "lot43419",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and zonal fail-rate binning (center vs mid vs edge) plus nearest-neighbor clustering statistics across the lot; a flat radial profile and random (Poisson) clustering would confirm random defect-limited yield rather than a systematic signature.",
+      "confidence": 0.72,
+      "_usage": {
+        "in": 1136,
+        "out": 159
+      }
+    },
+    {
+      "test": "clean",
+      "i": 11,
+      "lot": "lot45372",
+      "abstained": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (perimeter-concentrated failures)",
+      "primary_cause": "edge_bead_removal",
+      "process_step": "photoresist coat / EBR and edge exposure prior to etch; check bevel/edge film integrity",
+      "discriminating_check": "Radial binning of yield: confirm failure rate rises sharply only in the outermost 1-2 die rows (>3x center); then inspect EBR cut width and film thickness profile at wafer edge \u2014 an EBR/coat rolloff signature shows resist thickness drop and CD shift within 3-5 mm of edge, whereas uniform radial degradation would point to plasma/etch nonuniformity instead",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1136,
+        "out": 246
+      }
+    },
+    {
+      "test": "clean",
+      "i": 12,
+      "lot": "lot42585",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Overlay defect coordinates across multiple wafers in the lot: if the failures remain randomly distributed with no repeatable radial/edge/clustered signature (and inline defect inspection shows no localized particle cluster), it confirms baseline random yield loss rather than a systematic spatial mechanism. A recurring right-edge cluster across wafers would instead point to an edge-contact/handling or edge film effect.",
+      "confidence": 0.63,
+      "_usage": {
+        "in": 1136,
+        "out": 293
+      }
+    },
+    {
+      "test": "clean",
+      "i": 13,
+      "lot": "lot47110",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compare radial and zonal fail-rate histograms (center vs mid vs edge) across the full lot; a flat distribution with Poisson-consistent counts confirms random defectivity rather than a systematic signature. Note small clusters at left edge and bottom edge warrant checking for handling/clamp marks if they repeat wafer-to-wafer.",
+      "confidence": 0.7,
+      "_usage": {
+        "in": 1136,
+        "out": 185
+      }
+    },
+    {
+      "test": "clean",
+      "i": 14,
+      "lot": "lot116",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and zonal fail-rate binning (center vs mid vs edge) plus a nearest-neighbor clustering statistic across the lot; if fail density is statistically uniform with no significant clustering or edge enrichment, random defectivity is confirmed and no single spatial mechanism applies.",
+      "confidence": 0.72,
+      "_usage": {
+        "in": 1149,
+        "out": 169
+      }
+    },
+    {
+      "test": "clean",
+      "i": 15,
+      "lot": "lot46353",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Run a spatial randomness test (e.g., nearest-neighbor / radial bin-density comparison) across the lot: if failure density is statistically flat from center to edge and no clustering above Poisson expectation appears, random defect limited yield is confirmed rather than a systematic signature. The few edge-column fails should also be checked against wafer-edge die-area cropping/probe contact at the extreme left/right columns.",
+      "confidence": 0.68,
+      "_usage": {
+        "in": 1136,
+        "out": 205
+      }
+    },
+    {
+      "test": "clean",
+      "i": 16,
+      "lot": "lot44424",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and zonal fail-rate histograms (center vs mid vs edge annulus) plus a nearest-neighbor clustering statistic across the lot; a flat radial profile and random spacing confirms defect-limited random yield loss rather than a systematic signature. Also check bin/failure-mode mix for a single dominant electrical signature.",
+      "confidence": 0.72,
+      "_usage": {
+        "in": 1123,
+        "out": 184
+      }
+    },
+    {
+      "test": "clean",
+      "i": 17,
+      "lot": "lot230",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compare failing-die spatial statistics (e.g., radial bin-yield trend and nearest-neighbor clustering vs a Poisson random model) across the lot; a flat radial profile and no significant clustering confirms random defect-limited yield rather than a systematic signature.",
+      "confidence": 0.72,
+      "_usage": {
+        "in": 1149,
+        "out": 155
+      }
+    },
+    {
+      "test": "clean",
+      "i": 18,
+      "lot": "lot44534",
+      "abstained": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "localized dense cluster in upper (12 o'clock) region on a background of random defects",
+      "primary_cause": "particle_contamination",
+      "process_step": "Deposition/etch chamber prior to test \u2014 review inline defect inspection maps at each layer to find where the upper-region cluster first appears",
+      "discriminating_check": "Overlay inline particle/defect inspection maps layer-by-layer: if a matching cluster of adders appears in the 12 o'clock region at one specific step, particulate contamination (e.g., chamber flaking or handling-induced particles) is confirmed; if no adders correlate and the cluster is only electrical, suspect a systematic non-uniformity (e.g., coat/bake or plasma edge effect) or probe artifact instead",
+      "confidence": 0.45,
+      "_usage": {
+        "in": 1123,
+        "out": 383
+      }
+    },
+    {
+      "test": "clean",
+      "i": 19,
+      "lot": "lot45785",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and edge-zone fail rate bins plus a nearest-neighbor clustering statistic (e.g., Moran's I); if fail density is statistically uniform across radius and no clustering above random, the loss is random defectivity rather than a spatial signature.",
+      "confidence": 0.75,
+      "_usage": {
+        "in": 1136,
+        "out": 152
+      }
+    },
+    {
+      "test": "clean",
+      "i": 20,
+      "lot": "lot42638",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and azimuthal fail-density histograms across the lot; if edge-zone (outer 10% radius) fail rate is statistically indistinguishable from center and no cluster exceeds Poisson expectation, random defectivity is confirmed rather than a systematic signature.",
+      "confidence": 0.7,
+      "_usage": {
+        "in": 1136,
+        "out": 162
+      }
+    },
+    {
+      "test": "clean",
+      "i": 21,
+      "lot": "lot41125",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compare defect coordinates across multiple wafers in the lot for radial/edge binning statistics; if failure density per radial zone is flat and locations do not repeat wafer-to-wafer, it is random defectivity rather than a systematic signature",
+      "confidence": 0.68,
+      "_usage": {
+        "in": 1136,
+        "out": 144
+      }
+    },
+    {
+      "test": "clean",
+      "i": 22,
+      "lot": "lot45224",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Run a spatial randomness test (e.g., nearest-neighbor / quadrant chi-square) across the lot; if failures cluster at a consistent radius or region across multiple wafers, a systematic cause exists, otherwise random defectivity is confirmed",
+      "confidence": 0.72,
+      "_usage": {
+        "in": 1136,
+        "out": 150
+      }
+    },
+    {
+      "test": "clean",
+      "i": 23,
+      "lot": "lot40347",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial fail-rate bins (center vs mid vs outer annulus) and stack maps across the lot; a flat radial profile with lot-to-lot randomness confirms random defect limited yield rather than a systematic edge or center signature. Also check whether failures share a single bin code.",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1149,
+        "out": 158
+      }
+    },
+    {
+      "test": "clean",
+      "i": 24,
+      "lot": "lot45149",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compare radial/zonal fail-rate binning (center vs mid vs edge) across multiple wafers in the lot; a flat radial profile with random clustering statistics (e.g., Moran's I near zero) confirms random defect-limited yield rather than a systematic signature",
+      "confidence": 0.68,
+      "_usage": {
+        "in": 1136,
+        "out": 154
+      }
+    },
+    {
+      "test": "clean",
+      "i": 25,
+      "lot": "lot44961",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compare failing-die spatial density in center vs. outer annulus across multiple wafers in the lot: if a chi-square / radial-binning test shows no statistically significant radial or clustered enrichment (and bin codes are mixed rather than a single dominant failure mode), the loss is random defectivity; a repeating edge-ring or clustered enrichment across wafers would instead point to a systematic tool signature.",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1136,
+        "out": 316
+      }
+    },
+    {
+      "test": "clean",
+      "i": 26,
+      "lot": "lot46573",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and edge-zone fail density vs center; if edge ring density is not statistically elevated and fail bins vary across die, random defectivity is confirmed rather than a systematic spatial signature. Also check whether the few adjacent-die clusters repeat at the same coordinates on other wafers in the lot (reticle/stepper-field correlation).",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1136,
+        "out": 185
+      }
+    },
+    {
+      "test": "clean",
+      "i": 27,
+      "lot": "lot19",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Overlay this lot's failing-die coordinates against other wafers in the lot and run a cluster/scratch-detection test (e.g., nearest-neighbor or Hough line fit on failing die); if failures are Poisson-distributed with no repeating radial, edge, or linear signature, random defectivity is confirmed and no tool-specific cause should be pursued.",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1149,
+        "out": 354
+      }
+    },
+    {
+      "test": "clean",
+      "i": 28,
+      "lot": "lot44179",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compare this wafer's fail map to the rest of the lot and run a radial/zonal yield binning analysis \u2014 if failures remain uniformly distributed with no edge or center enrichment and no wafer-to-wafer repeatability, random defectivity is confirmed; a repeating cluster or edge ring across wafers would indicate a systematic tool signature.",
+      "confidence": 0.7,
+      "_usage": {
+        "in": 1123,
+        "out": 180
+      }
+    },
+    {
+      "test": "clean",
+      "i": 29,
+      "lot": "lot277",
+      "abstained": true,
+      "has_systematic_pattern": false,
+      "pattern_name": "none",
+      "primary_cause": "insufficient_information",
+      "process_step": "unknown",
+      "discriminating_check": "Compute radial and zonal fail-rate binning (center vs mid vs edge) across the full lot; if edge-zone fail rate is statistically indistinguishable from center, random defect-limited yield is confirmed and no systematic spatial signature exists.",
+      "confidence": 0.7,
+      "_usage": {
+        "in": 1149,
+        "out": 153
+      }
+    },
+    {
+      "test": "clean",
+      "i": 30,
+      "lot": "lot46616",
+      "abstained": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "curvilinear arc (scratch) in right/lower-right quadrant on a background of random defects",
+      "primary_cause": "cmp_pad_debris",
+      "process_step": "CMP (post-CMP inspection of the metal/oxide polish module), including post-CMP brush scrubber",
+      "discriminating_check": "Overlay the failing die coordinates and check for a continuous arc-shaped scratch in post-CMP defect inspection (bright-field/dark-field) images or optical/SEM review of those die; a physical curved gouge concentric with the wafer center confirms CMP pad debris scratching, while clean surfaces with only isolated killer particles would rule it out.",
+      "confidence": 0.52,
+      "_usage": {
+        "in": 1149,
+        "out": 373
+      }
+    },
+    {
+      "test": "context",
+      "i": 1,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with radial streaks superimposed on random background",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (dispense/spin) on LITHO-TRACK-03 coat module",
+        "discriminating_check": "Measure resist thickness/CD across the wafer (center vs mid-radius vs edge) on this lot and on the first wafer coated after the nozzle swap: a thick/thin center bullseye or dispense-splash signature at wafer center confirms coat nonuniformity, whereas flat thickness with normal CD would rule it out and point to random particle/defect sources.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1202,
+          "out": 355
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with random scratch-like streaks (post-PM pad debris)",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) \u2014 first lots after unscheduled pad replacement PM",
+        "discriminating_check": "Defect-inspection/optical review of the failing die for arc-shaped micro-scratches and embedded pad/slurry agglomerate particles, and check whether subsequent lots on CMP-04 after pad break-in/conditioning show the pattern disappear (vs. persisting, which would point to dishing or another tool)",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 219
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 2,
+      "label": "Loc",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Upper-left localized cluster (comet/streak from center-left toward edge) superimposed on a partial edge ring",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (spin coat) on LITHO-TRACK-03 coat module, post-PM nozzle replacement",
+        "discriminating_check": "Check post-coat resist thickness/defect scan (or wafer-to-wafer repeatability of the cluster's angular position relative to the notch): a radially oriented thickness excursion or striation/comet defect in the same upper-left sector on every wafer coated after the nozzle swap confirms coat nozzle dispense issue (bubble/partial clog/suckback); if the cluster location rotates randomly wafer-to-wafer or resist thickness maps are uniform, rule it out and look to particle contamination or bevel/edge effects instead",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1202,
+          "out": 441
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Upper-left localized cluster superimposed on a partial edge ring",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "Post-litho/metal CMP planarization on CMP-04 (first lot after unscheduled pad replacement PM)",
+        "discriminating_check": "Inspect/review post-CMP defect (bright-field or SP1) maps for the same upper-left cluster of scratch/embedded-particle signatures aligned with the polish direction \u2014 presence of micro-scratches or pad-material particles in that region confirms pad break-in debris; a clean post-CMP inspection with failures only at electrical test would rule it out and point to an edge/film-thickness issue instead",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 341
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 3,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with random background speckle",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (dispense) on LITHO-TRACK-03 coat module \u2014 post-PM nozzle replacement",
+        "discriminating_check": "Inspect post-develop/post-coat wafers for a center resist thickness anomaly or air-bubble/dispense-splash signature at the wafer center (reflectometry thickness map of first-few wafers vs. later wafers, plus nozzle prime/suckback check); if center thickness/CD is on-target and uniform, spin-coat dispense is ruled out and a chuck/lift-pin or center hot-spot cause should be pursued.",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1202,
+          "out": 349
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) on elevated random background",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP-04 post-PM pad break-in / oxide or metal polish",
+        "discriminating_check": "Measure post-CMP thickness/remaining-film radial profile: a center-thick or center-over-polished dish (>3-sigma delta at r<25% radius) confirms CMP center non-uniformity from the new pad's un-broken-in center; a flat radial profile with randomly distributed particle-type defects would point to pad debris/particles instead.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1190,
+          "out": 217
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 4,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost die ring failing continuously) with sparse random background defects",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / edge bead removal on LITHO-TRACK-03 coat module (post-PM nozzle replacement)",
+        "discriminating_check": "Measure the EBR cut width / resist edge exclusion on a wafer from this lot (cross-wafer resist profile or optical inspection of the wafer edge): an EBR band encroaching further inboard than spec (or misaligned/asymmetric after the nozzle swap) confirms EBR; a properly placed, on-spec EBR line with the failing ring lying inside it would point instead to bevel etch or edge clamp/film rolloff.",
+        "confidence": 0.7,
+        "_usage": {
+          "in": 1202,
+          "out": 338
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "continuous single-die-wide edge ring (full perimeter), plus low-level random background defects",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP-04 post-PM polish (new pad break-in) at the metal/oxide planarization step",
+        "discriminating_check": "Measure post-CMP radial thickness/removal-rate profile on this lot vs. a pre-PM lot: if the outer 3-5 mm shows excess removal (edge over-polish / residual step loss) that correlates with the failing ring, CMP is confirmed; if edge thickness is nominal and instead incoming film or EBR/bevel width is off, rule CMP out.",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 536
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 5,
+      "label": "Loc",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Curvilinear comet/streak arc (spin-coat striation) from mid-radius toward lower-right edge, on a background of random defects",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (spin coat module on LITHO-TRACK-03, post-PM nozzle replacement)",
+        "discriminating_check": "Overlay the failing die on a resist-thickness/reflectometry map of the same wafer: a comet-shaped thickness excursion trailing outward along the spin direction (and repeating with the same orientation on other wafers coated in that module after the nozzle swap) confirms spin-coat nonuniformity; if thickness is uniform and the arc instead follows a fixed reticle field or a CMP radial signature, rule it out",
+        "confidence": 0.66,
+        "_usage": {
+          "in": 1202,
+          "out": 481
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "curvilinear scratch / arc-shaped defect streak through center toward lower-right edge, plus scattered random fails",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) \u2014 post-PM pad break-in / oxide or metal polish immediately following pad replacement",
+        "discriminating_check": "Defect-inspection (bright-field/SEM) review along the streak: if the fails align with a continuous micro-scratch or embedded slurry-agglomerate/pad-fragment trail matching the polish sweep arc, CMP pad debris is confirmed; absence of physical scratches (electrical-only fails, no topography) would rule it out and point to a non-CMP cause.",
+        "confidence": 0.76,
+        "_usage": {
+          "in": 1190,
+          "out": 336
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 6,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost die ring failing)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR at LITHO-TRACK-03 coat module (post-PM nozzle replacement)",
+        "discriminating_check": "Measure EBR cut width / resist edge profile on a monitor wafer from this track and compare to pre-PM baseline \u2014 an EBR band wider (or misaligned) than spec that matches the failing ring width confirms EBR misadjustment after the nozzle swap; a normal EBR width with instead a bevel-etch or clamp mark would rule it out",
+        "confidence": 0.7,
+        "_usage": {
+          "in": 1215,
+          "out": 232
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "single-die-wide edge ring (outermost die failing all around wafer)",
+        "primary_cause": "film_edge_rolloff",
+        "process_step": "Deposition/edge-bead removal and edge exclusion at the film stack prior to CMP; check edge profile after depo/EBR",
+        "discriminating_check": "Measure film thickness/CD radial profile in the outermost 3-5 mm (e.g., ellipsometry or cross-section at r=147-150 mm): a sharp thickness roll-off/EBR boundary coincident with the failing ring confirms edge roll-off, whereas a gradual 10-20 mm wide removal-rate gradient (broader band) would point to CMP edge over-polish from the new pad",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1203,
+          "out": 499
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 7,
+      "label": "Loc",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "one-sided (right) edge band of failures on a background of random defects",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Resist coat / EBR at LITHO-TRACK-03 coat module (post-PM nozzle replacement)",
+        "discriminating_check": "Measure the EBR cut width / resist edge profile around the wafer circumference: an azimuthally asymmetric EBR band (wider or offset resist removal on the side matching the failing band, i.e. nozzle radial/centering offset after the PM) confirms EBR; a uniform, correctly centered EBR width with the band aligned to chuck/clamp or plasma-edge features instead points elsewhere",
+        "confidence": 0.66,
+        "_usage": {
+          "in": 1150,
+          "out": 395
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Localized edge cluster (right-side edge band) on random defect background",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) post-PM pad break-in / post-CMP clean",
+        "discriminating_check": "Inspect the right-edge failing die with defect review/SEM after CMP: presence of pad-debris scratches or residual slurry agglomerates (and correlated post-CMP thickness/scratch signature on wafers from the first lots after the PM, disappearing in later lots) confirms pad debris; clean surfaces with an edge thickness roll-off instead would point to CMP edge dishing or a film edge effect.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1138,
+          "out": 248
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 8,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost die failing continuously around perimeter)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR at LITHO-TRACK-03 coat module (post-PM nozzle replacement)",
+        "discriminating_check": "Measure EBR cut width / resist edge profile on a monitor wafer from this track: an EBR width wider than spec (or misaligned EBR nozzle after the PM) that matches the failing ring radius confirms it; a normal EBR width with the ring persisting across other tools points instead to etch/bevel or film edge roll-off",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1215,
+          "out": 231
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "single-die-wide continuous edge ring (outermost die row) with random background defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Coat/develop track EBR at photoresist coat (verify EBR width setpoint) \u2014 plus confirm film edge roll-off from deposition/bevel etch",
+        "discriminating_check": "Measure the radial extent of failure vs. EBR/bevel setpoint: if the fail band starts exactly at the EBR cut radius (sharp, one-die-wide, azimuthally uniform, with normal CD/thickness just inboard), EBR/edge film loss is confirmed; if instead the edge fails show a graded radial thickness/removal-rate gradient extending several die inward (or an azimuthal signature tied to carrier/retaining-ring position), the cause is CMP edge over-polish from the new pad, not EBR.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1203,
+          "out": 475
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 9,
+      "label": "Loc",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized edge-anchored cluster (left-side blob extending inward from wafer edge)",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat on LITHO-TRACK-03 coat module (post-PM nozzle replacement)",
+        "discriminating_check": "Inspect post-coat resist thickness/defect map on this lot for a comet/striation streak radiating from the same left-edge location (and check whether subsequent lots on TRACK-03 repeat the cluster at a fixed wafer-coordinate position); a rotation-invariant repeat location tied to the coat module confirms nozzle/dispense defect, whereas absence and random relocation would point to particle contamination instead",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1202,
+          "out": 267
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized dense cluster at mid-left extending to wafer edge (single-sector blob) on random background",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) polish following unscheduled PM / pad replacement \u2014 likely pad break-in debris or embedded conditioner/pad fragment causing localized scratch-and-smear defect cluster",
+        "discriminating_check": "Post-CMP defect inspection / SEM review of the cluster die: arc-shaped or radially-swept micro-scratches with embedded pad/slurry agglomerate residue confirms pad debris; if the cluster instead shows uniform film thinning (no scratches) with a smooth radial profile it points to dishing/pad-conditioning uniformity rather than debris. Also check whether the immediately following lots on CMP-04 show the same cluster location (transient after PM = debris).",
+        "confidence": 0.78,
+        "_usage": {
+          "in": 1190,
+          "out": 365
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 10,
+      "label": "Donut",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Center swirl / spiral comet arc with random background speckle",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (spin coat module on LITHO-TRACK-03, post-PM nozzle replacement)",
+        "discriminating_check": "Measure resist thickness / CD across the affected arc with an ellipsometer or scatterometry map \u2014 a spiral thickness striation radiating from wafer center (and correlated CD/defect signature that repeats only on wafers coated in that module after the PM) confirms coat nozzle dispense issue (air bubble/off-center dispense/suckback); uniform thickness with the failures tracking a different tool would rule it out.",
+        "confidence": 0.75,
+        "_usage": {
+          "in": 1215,
+          "out": 334
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "curved arc / crescent scratch cluster (center-offset ring segment) with random background specks",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) post-PM pad break-in / polish after pad replacement",
+        "discriminating_check": "Post-CMP brightfield defect inspection or optical review of the failing arc: if it shows arcuate mechanical scratches/gouges concentric with the platen sweep (and defect map matches the electrical arc), pad debris/inadequate break-in is confirmed; smooth thickness-only variation with no scratches would rule it out and point to dishing/erosion instead.",
+        "confidence": 0.78,
+        "_usage": {
+          "in": 1203,
+          "out": 242
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 11,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": false,
+        "pattern_name": "none",
+        "primary_cause": "insufficient_information",
+        "process_step": "unknown",
+        "discriminating_check": "Compare defect-density radial (center-to-edge) and azimuthal profiles for this lot against baseline lots on other tracks: a genuine coat-module issue would show a reproducible radial/spiral or striation signature, whereas a flat radial profile with random nearest-neighbor spacing (Poisson clustering test) confirms ordinary random yield loss unrelated to the LITHO-TRACK-03 PM.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1202,
+          "out": 562
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Random-scattered defect clusters with center-weighted grouping (post-pad-change debris signature)",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) polish following unscheduled PM / pad replacement \u2014 check pad break-in and post-CMP clean",
+        "discriminating_check": "Review post-CMP defect inspection (bright-field/darkfield) for the lot: presence of arc/scratch-shaped particle-induced defects and pad-material residue at the same coordinates as the failing die would confirm pad debris; if inspection is clean and failures are purely electrical with no particles, rule it out and look for a parametric cause. Also compare with the immediately following lots on CMP-04 \u2014 a decaying defect count over the first few lots after the pad change confirms break-in debris.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1190,
+          "out": 419
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 12,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter failure band ~1-2 die wide) with superimposed random defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Resist coat / EBR at LITHO-TRACK-03 coat module (post-PM nozzle replacement)",
+        "discriminating_check": "Measure the EBR cut width / inspect resist edge profile on a monitor wafer from this track after PM: an EBR band wider (or misaligned) than the pre-PM baseline, matching the ~1-2 die failing ring, confirms EBR nozzle setup error; a normal EBR width with the same ring failing points instead to bevel etch or edge film rolloff.",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1202,
+          "out": 338
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (1-2 die wide continuous perimeter band) superimposed on low-level random defectivity",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP on CMP-04 (post-PM pad replacement) - metal/oxide planarization immediately preceding this lot",
+        "discriminating_check": "Measure post-CMP remaining film thickness / step-height radial profile on this lot (and a pre-PM lot) at 1-5 mm from the wafer edge: a sharp edge over-polish (thinning/residue reversal) confined to the outer ~5 mm that appears only after the pad swap confirms new-pad edge polish-rate nonuniformity; a flat radial profile with edge fails matching an incoming film edge bead or bevel signature would rule it out.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1190,
+          "out": 707
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 13,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Radial coat streak (comet) from wafer center toward top edge, superimposed on random background defectivity",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat on LITHO-TRACK-03 (coat module, post-PM nozzle replacement)",
+        "discriminating_check": "Inspect post-develop (ADI) macro/defect scan for a continuous radial resist thickness streak or comet tail along the same center-to-top-edge trajectory, and check whether the streak azimuth rotates/disappears on wafers coated after nozzle re-priming; a reflectometry thickness map showing a localized ridge along that radius confirms coat nozzle bubble/drip, while a clean uniform thickness map rules it out.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1215,
+          "out": 503
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "random-clustered defect signature (multi-die clusters superimposed on scattered singles), no radial/edge dependence",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP-04 post-PM polish (new pad break-in) followed by post-CMP clean/inspection",
+        "discriminating_check": "Review post-CMP darkfield/defect-inspection maps and SEM for the same lot: confirm micro-scratches/embedded pad or slurry-agglomerate particles whose coordinates overlay the failing die clusters, and check whether the first few wafers after the pad change are worse than later wafers (break-in trend). Absence of scratches/particles at those coordinates would rule out pad debris.",
+        "confidence": 0.66,
+        "_usage": {
+          "in": 1203,
+          "out": 363
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 14,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "full-perimeter edge ring failure (1-2 die wide) with superimposed random defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR on LITHO-TRACK-03 coat module (nozzle replaced at PM 18 h prior)",
+        "discriminating_check": "Measure the EBR cut width / resist edge profile on a monitor wafer from that coat module and compare to pre-PM baseline: if the EBR width has shifted inward (or the dispense nozzle is off-center, giving asymmetric resist edge roll-off) the edge ring is confirmed; if EBR width is on target and the same ring appears on wafers coated on other tracks, rule it out and look to bevel etch or edge clamp contact.",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1215,
+          "out": 395
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Full-perimeter edge ring (1-2 die wide) with a short linear/arc defect cluster near upper-left; remaining failures are random background",
+        "primary_cause": "cmp_dishing",
+        "process_step": "Post-pad-replacement CMP polish on CMP-04 (metal/oxide planarization) - check edge removal rate profile and break-in state of the new pad",
+        "discriminating_check": "Measure post-CMP remaining-film thickness / step height radially (e.g., 5 mm from edge vs center) on this lot and on a lot polished on a broken-in pad: if the outer 2-5 mm shows markedly greater removal (over-polish/dishing) only on the post-PM lot, CMP edge over-polish is confirmed; if the edge film thickness profile is flat and matches reference wafers, look instead at an upstream edge process (EBR/bevel etch) or a probe-card edge contact artifact",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1203,
+          "out": 767
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 15,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with partial edge ring (bullseye-plus-center-blob)",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "photoresist coat on LITHO-TRACK-03 (coat module dispense nozzle) prior to litho exposure",
+        "discriminating_check": "Inspect post-coat resist thickness/defect scan at wafer center: an air bubble or dried-tip particle from the newly replaced dispense nozzle should show a localized center thickness anomaly or comet/striation defect signature; if center resist thickness and post-develop CD are on-target and uniform, spin-coat/nozzle cause is ruled out (then look at etch chamber or random particle sources).",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1202,
+          "out": 412
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with edge ring (random background)",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) post-PM pad break-in / post-CMP clean",
+        "discriminating_check": "Defect review of the center cluster dies: if SEM/optical shows embedded pad debris or micro-scratches in the polished layer (and the cluster disappears on lots run after pad break-in/conditioning), CMP pad debris is confirmed; purely electrical opens with no surface defects would rule it out",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1190,
+          "out": 203
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 16,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter, ~1-2 die wide) with sparse random background failures",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR on LITHO-TRACK-03 coat module (nozzle replaced at recent PM)",
+        "discriminating_check": "Measure the EBR cut width / resist edge profile on a monitor wafer from this track (or compare pre/post-PM EBR recipe offsets and nozzle alignment): an EBR band extending inward beyond spec (over-dispense/misaligned nozzle after replacement) confirms it, whereas a nominal ~1-2 mm EBR width with normal resist coverage at the outermost die rules it out and points to a bevel-etch or edge-clamp mechanism instead",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1202,
+          "out": 350
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "single-die-wide edge ring (full-perimeter) with light random background scatter",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP-04 post-PM polish step (pad break-in / retaining-ring edge over-polish) following the unscheduled pad replacement",
+        "discriminating_check": "Measure post-CMP film thickness / remaining-step-height radial profile out to r>145 mm on this lot vs. a pre-PM lot: strong edge over-removal (thin film) in the outer 3-5 mm confirms CMP edge over-polish from an un-broken-in pad; a flat radial removal profile with the edge ring instead tracking the coater EBR/bevel-etch boundary would rule it out and point to film edge roll-off",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1190,
+          "out": 687
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 17,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (single-to-double die wide continuous ring of failures at wafer perimeter) with superimposed random defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR at LITHO-TRACK-03 coat module (post-PM nozzle replacement)",
+        "discriminating_check": "Measure the EBR cut width / resist edge profile on a monitor wafer from this track and compare to pre-PM baseline: if the EBR band has widened (or the dispense/EBR nozzle is off-center, giving an asymmetric resist edge) so that resist is removed inside the outermost die row, EBR is confirmed; a uniform, on-spec EBR width with the same edge ring appearing at other layers/tools would rule it out and point to bevel etch or edge clamp contact",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1202,
+          "out": 416
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring failure (full-perimeter edge band) with light random interior scatter",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP (CMP-04) post-pad-replacement polish \u2014 check edge removal rate profile / break-in",
+        "discriminating_check": "Measure post-CMP thickness/removal-rate radial profile on this lot vs. a pre-PM lot: a sharp over-polish (or under-polish residue) in the outermost 3-5 mm confirms CMP edge roll-off from the new pad's incomplete break-in; a flat edge profile would rule it out and point to litho/edge-bead or probe edge artifact instead",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1190,
+          "out": 247
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 18,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost die failing continuously around perimeter)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / edge bead removal on LITHO-TRACK-03 coat module (nozzle replaced at recent PM)",
+        "discriminating_check": "Measure EBR cut width / inspect resist edge profile on a monitor wafer from this track after the nozzle change \u2014 an EBR band wider than spec (encroaching into the outermost die row) confirms; nominal EBR width with uniform edge resist would rule it out and point to bevel etch or edge film rolloff",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1215,
+          "out": 229
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost 1-2 die rows) failing continuously around wafer, plus low-level random background defectivity",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP on CMP-04 (post-PM pad replacement) - metal/oxide polish immediately preceding this lot",
+        "discriminating_check": "Measure post-CMP radial thickness/removal-rate profile (and residual/erosion at edge die) on this lot vs. a lot run on the same broken-in pad before PM: an edge-high removal rate / over-polish or residual step in the outer 5-10 mm confirms new-pad CMP edge non-uniformity, whereas a flat radial profile with the same ring would point to a litho/EBR or bevel-etch edge exclusion effect instead.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1203,
+          "out": 562
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 19,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center blob with radial 'comet' streak toward wafer edge, plus elevated random/edge fails",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (spin coat module, LITHO-TRACK-03) \u2014 dispense nozzle after unscheduled PM",
+        "discriminating_check": "Inspect post-coat resist thickness/defect map (or macro-inspect a few wafers of the lot): a comet/streak of thickness deviation originating near wafer center and trailing radially outward, repeating on wafers coated on the same module/nozzle, confirms coat nozzle dispense (bubble/partial-clog/mis-set dispense height) as cause; absence of a radial thickness streak with random defect distribution instead points to particle contamination.",
+        "confidence": 0.66,
+        "_usage": {
+          "in": 1202,
+          "out": 410
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "random-clustered scratch/smear defects with curvilinear streaks (post-PM pad break-in debris)",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) post-PM pad break-in / conditioning",
+        "discriminating_check": "Review defect-inspection maps and SEM of failing die for arc-shaped micro-scratches/slurry agglomerate residue aligned with polish rotation; if wafers from the same tool after full pad break-in and dummy conditioning are clean, pad debris is confirmed \u2014 absence of scratches/embedded particles would rule it out",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 231
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 20,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (single-die-wide continuous ring of failures at wafer perimeter, plus low-level random background defects)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR on LITHO-TRACK-03 coat module (nozzle replaced at PM 18 h prior)",
+        "discriminating_check": "Measure the EBR cut width / resist edge profile on a monitor wafer from this track: if the EBR boundary has moved inward (or become ragged/asymmetric) versus the pre-PM baseline, exposing or thinning resist over the outermost die row, EBR setup after the nozzle replacement is confirmed; if the EBR width matches spec and edge resist thickness is normal, look instead at bevel etch or edge clamp contact.",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1215,
+          "out": 355
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Narrow full-circumference edge ring (outer 1-2 die) with light random background defectivity",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP-04 post-PM (new pad) oxide/metal polish - wafer edge removal-rate profile during pad break-in",
+        "discriminating_check": "Pull post-CMP thickness/removal-rate radial profiles for this lot vs. the last lots before the PM: if the outer ~3-5 mm shows over-removal (clearing/residual thinning) that appeared only after the pad change, CMP edge over-polish is confirmed; if the edge thickness profile is unchanged and the ring instead tracks the coater's EBR/bevel width from a film-stack measurement, the cause is litho/EBR or bevel etch instead.",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1203,
+          "out": 561
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 21,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with random background fails",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "photoresist coat (dispense/spin) on LITHO-TRACK-03 coat module",
+        "discriminating_check": "Inspect post-coat resist thickness/defect maps for wafers from this lot: a concentrated center thickness anomaly or dispense-related center defect signature (e.g., bubble/suckback splatter at the dispense point) confirms the new nozzle; uniform center thickness with the fails traceable to a different layer's inline defect map rules it out",
+        "confidence": 0.65,
+        "_usage": {
+          "in": 1202,
+          "out": 313
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with scattered random defects",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP-04 post-PM pad break-in / oxide polish",
+        "discriminating_check": "Post-CMP defect inspection (bright-field/dark-field) on wafers from this lot vs. the next lot after extended pad break-in \residach or slurry-agglomerate scratches concentrated near wafer center would confirm pad debris; a smooth, dish-shaped thickness profile with no particle signature would point to dishing instead",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 211
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 22,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with random background",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (dispense/spin) on LITHO-TRACK-03 coat module, post-PM nozzle replacement",
+        "discriminating_check": "Inspect post-coat resist thickness/defect map at wafer center (or after-develop inspection) for a central thick/thin blob or dispense splash-bubble signature; if center resist thickness and ADI CD are on-target and uniform, spin-coat dispense is ruled out and the cluster is more likely particle/contamination from another module.",
+        "confidence": 0.66,
+        "_usage": {
+          "in": 1202,
+          "out": 322
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (large contiguous center blob) with scattered random defects",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) post-PM pad break-in / post-CMP clean",
+        "discriminating_check": "Defect-inspection review of the center cluster after CMP: presence of scratch/gouge signatures or embedded pad/conditioner debris particles at the wafer center (and whether subsequent lots on CMP-04 after full pad break-in lose the center signature) would confirm pad debris; a smooth thickness dome with no particles/scratches would point to dishing/removal-rate nonuniformity instead.",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 244
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 23,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (peripheral ring of failing die, ~1-2 die wide, full azimuthal coverage)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR on LITHO-TRACK-03 coat module (nozzle replaced during unscheduled PM 18 h prior)",
+        "discriminating_check": "Measure EBR cut width / resist edge profile on a monitor wafer from that coat module (or inspect wafer edge after develop): an EBR width shifted inboard of spec relative to pre-PM baseline, with resist loss/CD failure coincident with the failing ring radius, confirms nozzle-position/EBR misalignment; a nominal, on-spec EBR band with the failing ring extending beyond it points instead to bevel etch or edge-clamp/film-rolloff causes.",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1202,
+          "out": 374
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter edge failure band) with random background defectivity",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP (CMP-04 polish step following pad replacement / post-PM break-in)",
+        "discriminating_check": "Measure post-CMP thickness/removal-rate radial profile on the lot (and a monitor wafer): a sharp remaining-film or over-polish rolloff in the outer 3-5 mm coinciding with the failing ring confirms CMP edge over-polish/dishing from the new pad; a flat radial profile with failures instead tracking edge-bead/coat or bevel-etch boundaries rules it out.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1190,
+          "out": 250
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 24,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with scattered edge fails",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (dispense/spin) on LITHO-TRACK-03 coat module",
+        "discriminating_check": "Measure resist thickness/CD radially on a monitor wafer coated after the nozzle swap: a thick or streaked resist mound within ~30 mm of wafer center (or trapped air/bubble in dispense line) confirms nozzle/dispense-induced coat nonuniformity; a flat radial thickness profile with defects instead matching a particle map would rule it out",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1202,
+          "out": 295
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with scattered edge fails",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP (CMP-04) post-pad-replacement polish; check break-in and removal-rate uniformity",
+        "discriminating_check": "Measure post-CMP thickness/removal-rate radial profile on this lot's wafers: a center-high removal (over-polish/dishing) signature co-located with the central fail cluster confirms CMP; a flat radial profile with random particle-type defects on defect inspection would rule it out and point to pad debris/scratching instead",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 222
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 25,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with radial streak arms (bullseye/spoke center defect)",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (spin coat dispense) on LITHO-TRACK-03 coat module, post-PM nozzle replacement",
+        "discriminating_check": "Inspect post-coat resist thickness/defect scan (or after-develop inspection) for a center dispense splash/bubble signature with radial striations; if resist thickness and ADI defects are centered and radially streaked on wafers from this track only after the PM, coat nozzle setup is confirmed. If ADI is clean and the center failures persist as electrical-only with no film signature, rule it out.",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1202,
+          "out": 345
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with radial scratch-like streaks",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) post-PM pad break-in / polish",
+        "discriminating_check": "Post-CMP defect review (bright-field/AFM) of center die for arc or radial micro-scratches and embedded pad/conditioner debris; if defects are scratches concentrated at wafer center matching this map, pad debris after PM is confirmed \u2014 if instead center die show uniform thickness loss with no scratches, suspect dishing/removal-rate profile instead",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1190,
+          "out": 220
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 26,
+      "label": "Loc",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Radial coat streak (comet) from wafer center to left edge, plus random defectivity",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat on LITHO-TRACK-03 (coat module, newly replaced dispense nozzle)",
+        "discriminating_check": "Inspect post-develop (ADI) defect/CD maps or a resist thickness map for a wedge/streak of thickness deviation along the same azimuth; if the streak appears in resist thickness or ADI but not in pre-litho films, coat nozzle streaking is confirmed. If instead the streak appears as a physical gouge in post-CMP surface inspection, it is a mechanical scratch and coat is ruled out.",
+        "confidence": 0.7,
+        "_usage": {
+          "in": 1202,
+          "out": 431
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "radial scratch / linear streak from wafer left edge toward center (CMP scratch arc)",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) polish following unscheduled PM / new pad break-in",
+        "discriminating_check": "Inspect the wafer with post-CMP bright-field/darkfield defect scan (or SEM cross-section along the streak) for a continuous mechanical gouge/scratch with smeared metal residue coincident with the failing die row; if the failures instead correspond to electrical opens with no physical scratch, pad debris is ruled out. Also check whether the immediately preceding lots on CMP-04 after the pad change show the same streak (new-pad break-in debris signature).",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1190,
+          "out": 274
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 27,
+      "label": "Center",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) superimposed on random background defectivity",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (dispense/spin) on LITHO-TRACK-03 coat module",
+        "discriminating_check": "Inspect post-develop/post-coat wafers for a center resist thickness anomaly or dispense-point defect (reflectometry radial thickness scan or macro inspection of the wafer center); if center resist thickness/CD deviates only on wafers coated after the nozzle swap, spin-coat dispense is confirmed. If resist thickness and CD at center are nominal and instead center die show particles/scratches, rule it out.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1215,
+          "out": 369
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with elevated random background (center blob + scattered defects)",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (CMP-04) post-PM pad break-in / post-CMP clean",
+        "discriminating_check": "Defect-inspection review of the center cluster after CMP: if it shows embedded pad/abrasive debris particles and scratch marks (and the cluster disappears on later lots after pad break-in/conditioning), pad debris from the fresh pad is confirmed; if instead the center shows thickness/dishing signature with no particles, blame CMP dishing/profile.",
+        "confidence": 0.63,
+        "_usage": {
+          "in": 1203,
+          "out": 231
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 28,
+      "label": "Loc",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with sparse random background",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat (dispense/spin) on LITHO-TRACK-03 coat module",
+        "discriminating_check": "Inspect post-develop/after-coat wafers from the same track for a central resist thickness anomaly or dispense-related defect (interferometric thickness map or defect review showing central resist blob/comet/bubble at the wafer center). If center resist thickness and CD match spec and center defects are instead metallic particles, spin coat is ruled out.",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1202,
+          "out": 319
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with radial satellite scatter",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP-04 post-PM pad break-in / oxide or metal polish module",
+        "discriminating_check": "Inspect the center-cluster failures with bright-field/AFM or SEM defect review after CMP: micro-scratches and embedded pad/conditioner debris localized at wafer center (and matching the post-PM defect scan on the first monitor wafers) confirms pad debris; if instead the center dies show uniform thickness loss/residual with no scratches, suspect dishing or removal-rate nonuniformity instead.",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 402
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 29,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (continuous 1-2 die wide failing band at wafer perimeter) plus low-level random defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR on LITHO-TRACK-03 coat module (nozzle replaced at unscheduled PM 18 h prior)",
+        "discriminating_check": "Measure EBR cut width / resist edge profile on a monitor wafer from this track and compare to pre-PM baseline: an EBR band encroaching further inboard (or a mis-centered dispense arm) than spec confirms it; if EBR width is on target and instead the failures correlate with etch bevel or clamp marks visible at the wafer edge, rule it out.",
+        "confidence": 0.7,
+        "_usage": {
+          "in": 1202,
+          "out": 349
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring fail (full-perimeter outermost die) with sparse random interior defects",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "CMP / post-CMP edge exclusion (verify coater EBR width and CMP edge polish profile)",
+        "discriminating_check": "Radial fail-rate profile: if failures are confined to the outermost 1-2 die rows uniformly around 360 deg with a sharp step to near-zero inboard, it is an edge exclusion/EBR-film-rolloff effect; if instead the edge failures widen asymmetrically or thickness metrology shows accelerated removal only at the edge after the pad swap, CMP edge over-polish is the cause",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1190,
+          "out": 260
+        }
+      }
+    },
+    {
+      "test": "context",
+      "i": 30,
+      "label": "Edge-Ring",
+      "differs": true,
+      "litho": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter outermost die failure)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / EBR at LITHO-TRACK-03 coat module (post-PM nozzle replacement)",
+        "discriminating_check": "Measure EBR cut width / resist edge profile with an edge-inspection tool or cross-wafer CD scan: an EBR band cutting further inboard than spec (or resist rolloff) on this lot versus a pre-PM lot confirms EBR misalignment; a uniform, in-spec EBR width with the ring persisting would point instead to bevel etch or edge clamp effects.",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1202,
+          "out": 248
+        }
+      },
+      "cmp": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (single-die-wide continuous perimeter failure)",
+        "primary_cause": "cmp_dishing",
+        "process_step": "Cu/oxide CMP on CMP-04 (post-PM new pad break-in)",
+        "discriminating_check": "Measure post-CMP remaining-thickness / removal-rate radial profile on this lot vs. a pre-PM lot: a sharp roll-off (over-removal or residual film) in the outer 3-5 mm confirms new-pad edge over-polish; a flat radial profile with normal edge thickness rules out CMP and points to film edge roll-off/EBR at deposition or coat",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1190,
+          "out": 471
+        }
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 1,
+      "took_bait": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outermost die ring failing) with random background defectivity",
+      "primary_cause": "edge_bead_removal",
+      "process_step": "Photoresist coat / EBR and post-CMP edge film integrity; check CMP-04 edge profile after pad change",
+      "discriminating_check": "Radial film-thickness/CD profile plus cross-section at the failing outer ring: if remaining film is thinned/cleared only in the last 2-3 mm (sharp EBR-width step at a fixed radius) it is EBR/edge film rolloff; if instead the edge shows progressive polish over-removal (dishing/erosion gradient starting ~10 mm from edge) blame the new CMP pad break-in on CMP-04.",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1203,
+        "out": 267
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 2,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "full-wafer edge ring (1-2 die wide) with superimposed random/scattered mid-radius failures",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP-04 post-PM polish (new pad break-in) at the metal/oxide planarization step",
+      "discriminating_check": "Measure post-CMP remaining-film thickness / step-height radial profile: if the outermost 5-10 mm shows significant over-polish (clearing or excessive dishing) relative to center, edge over-polish from the fresh, unconditioned pad is confirmed; if the edge thickness profile matches the pre-PM baseline and the ring is present in incoming film/EBR inspection instead, CMP is ruled out in favor of a coat/EBR or bevel-etch edge exclusion cause",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1190,
+        "out": 579
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 3,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "full-circumference edge ring (outer 1-2 die rows), slightly wider on the right edge, plus low-level random background scatter",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP-04 post-PM polish (new pad break-in) at the metal/oxide CMP module preceding this bin test",
+      "discriminating_check": "Measure post-CMP remaining-film/step-height radial profile on this lot vs. the last pre-PM lot: if the outer 3-5 mm shows excess removal (over-polish/dishing) that appears only after the pad swap, CMP edge over-polish is confirmed; if edge thickness is normal and instead the resist/film edge exclusion band is shifted, the cause is upstream (EBR/bevel etch) not CMP.",
+      "confidence": 0.66,
+      "_usage": {
+        "in": 1203,
+        "out": 570
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 4,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring with scattered random defects",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (CMP-04) post-PM pad break-in / polish uniformity",
+      "discriminating_check": "Measure post-CMP remaining-film thickness radial profile: strong edge-fast (over-polish) or edge-slow roll-off at the outer 5-10 mm correlating with the failing ring confirms CMP removal-rate nonuniformity from the new pad; a flat radial profile rules it out and points to litho/film edge effects",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1203,
+        "out": 209
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 5,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "full-perimeter edge ring (1-2 die wide) with low-level random background defects",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP-04 post-PM new-pad polish (metal/oxide CMP) \u2014 pad break-in / edge removal-rate uniformity",
+      "discriminating_check": "Measure post-CMP remaining-film thickness / step-height radial profile: if removal rate rises sharply in the outer 5-10 mm (over-polish, residual-metal loss or excess dishing at edge) on this lot versus the pre-PM baseline, CMP edge over-polish from the new pad is confirmed; if edge thickness is normal and the failing ring instead correlates with a coat/develop or etch edge exclusion boundary, rule it out.",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1203,
+        "out": 461
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 6,
+      "took_bait": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outermost 1-2 die rows failing continuously around circumference) with superimposed random defect speckle",
+      "primary_cause": "edge_bead_removal",
+      "process_step": "Coat/develop track EBR (edge bead removal) and edge exclusion at the critical litho/film deposition layer",
+      "discriminating_check": "Measure the radial film-thickness/EBR cut-back profile at the wafer edge (and compare failing-die radius to the EBR width, ~2-3 mm): if the fail ring radius coincides exactly with the EBR/edge-exclusion boundary and is present on every wafer in the lot regardless of CMP tool, EBR/edge exclusion is confirmed; if instead the edge ring depth varies with CMP removal-rate maps (thinner/over-polished edge only on CMP-04 wafers after the pad change), it is CMP edge roll-off, not EBR",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1203,
+        "out": 685
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 7,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "Edge ring (outer 1-2 die rows) with light random scatter",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (CMP-04) post-PM new-pad break-in \u2014 oxide/metal polish step",
+      "discriminating_check": "Measure post-CMP remaining-film thickness / removal-rate radial profile on this lot vs. a pre-PM lot: a sharp edge over-polish (or under-polish) roll-off in the outer 5-10 mm that correlates with the failing ring confirms new-pad break-in edge removal-rate excursion; a flat radial profile would rule it out and point to an edge-clamp/EBR or probe-contact artifact instead.",
+      "confidence": 0.68,
+      "_usage": {
+        "in": 1190,
+        "out": 573
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 8,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "outermost-row edge ring with superimposed random defect scatter",
+      "primary_cause": "cmp_dishing",
+      "process_step": "Cu/oxide CMP on CMP-04 (post-PM new pad break-in) - edge removal-rate profile",
+      "discriminating_check": "Measure post-CMP thickness/removal-rate radial profile (and remaining-step-height) on the outer 5 mm of this lot vs. lots polished on CMP-04 before the pad change: if the new pad shows excess edge removal (over-polish/dishing) only after the PM, CMP is confirmed; if the same one-die edge ring appears in pre-PM lots and on other polishers, it is a standing edge-exclusion (EBR/film roll-off) artifact and CMP is ruled out",
+      "confidence": 0.52,
+      "_usage": {
+        "in": 1190,
+        "out": 646
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 9,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring failure with scattered random defects",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (post-PM pad break-in) - oxide/metal polish on CMP-04",
+      "discriminating_check": "Measure post-CMP thickness/removal-rate radial profile: edge-fast (over-polish) roll-off in the outer 3-5 mm confirms CMP edge over-removal; a flat radial profile with the ring present would point instead to an edge-bead/bevel or clamp-related module",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1190,
+        "out": 200
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 10,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "full-perimeter edge ring (1-2 die wide) with superimposed random specks",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP-04 post-PM polish step (new pad break-in) for this layer",
+      "discriminating_check": "Pull post-CMP film thickness / remaining-step-height radial profiles (center vs 145-149 mm) for this lot and compare with pre-PM lots on CMP-04: a steep edge over-polish (thinning or residual-clear excursion) only in the outer few mm on post-PM wafers confirms new-pad break-in edge removal-rate excursion, whereas a flat radial profile with the ring still present points instead to a fixed edge-exclusion/film-edge effect (EBR, bevel etch, or edge clamp) unrelated to the PM.",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1190,
+        "out": 675
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 11,
+      "took_bait": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outermost die band failing) with random background defects",
+      "primary_cause": "edge_bead_removal",
+      "process_step": "CMP / post-CMP edge region \u2014 check edge polish profile and film thickness roll-off at wafer edge (also verify EBR width at coat)",
+      "discriminating_check": "Radial film-thickness / removal-rate profile from the last 10 mm of the wafer edge: if post-CMP thickness collapses (over-polish roll-off) only in the outer ring, it is CMP edge over-removal from the new pad break-in; if instead thickness is normal and the ring corresponds exactly to the coater's EBR cut line, it is edge bead removal",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1203,
+        "out": 251
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 12,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "Edge ring plus diffuse center cluster (post-PM CMP signature)",
+      "primary_cause": "cmp_pad_debris",
+      "process_step": "CMP on CMP-04 (post-PM pad break-in / conditioning)",
+      "discriminating_check": "Inspect post-CMP defect review (bright-field/AFM) of center-region fails for micro-scratches and slurry/pad-fiber residue oriented with polish direction, and compare with the immediately preceding and following lots on CMP-04: if defect density decays lot-over-lot after the pad change, pad break-in debris is confirmed; if center fails show no scratches/particles and instead parametric CD/thickness shifts, rule it out.",
+      "confidence": 0.68,
+      "_usage": {
+        "in": 1203,
+        "out": 354
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 13,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "dense random scatter with mild edge-ring enhancement (defect-density excursion)",
+      "primary_cause": "cmp_pad_debris",
+      "process_step": "CMP-04 post-PM polish (new pad break-in) and subsequent post-CMP clean",
+      "discriminating_check": "Review post-CMP inspection (bright-field/dark-field) defect maps for the first few lots after the pad change: confirming numerous micro-scratches/slurry-agglomerate particles that spatially overlay the failing die (and that decay lot-over-lot as the pad breaks in) confirms pad debris; if inspection is clean and failures do not correlate with CMP defects, rule it out and look at a wafer-edge/film-thickness mechanism instead.",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1203,
+        "out": 491
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 14,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring failure (full-perimeter outermost die ring) with sparse random background defects",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (CMP-04) post-PM pad break-in / polish uniformity at wafer edge",
+      "discriminating_check": "Measure post-CMP remaining film thickness / step height radially: if edge die show excessive removal (over-polish, thinning or residual metal bridging) in the outer 3-5 mm while center is on target, CMP edge roll-off is confirmed; if edge thickness is uniform with center, look instead at coat/EBR or bevel etch.",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1190,
+        "out": 234
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 15,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "Edge ring (1-2 die wide continuous failing band at wafer perimeter) with light random scatter in the interior",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP-04 post-pad-replacement polish (Cu/oxide CMP) - edge over-polish during new pad break-in",
+      "discriminating_check": "Measure post-CMP remaining film thickness / step height radially (center vs 2-5 mm from edge) on this lot and on a wafer polished >1 day after the pad break-in: confirmed if the failing edge annulus shows excess removal/thinning that disappears once the pad is broken in; ruled out if edge thickness matches center (then look at edge bead / bevel or probe contact at the edge).",
+      "confidence": 0.68,
+      "_usage": {
+        "in": 1190,
+        "out": 500
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 16,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outermost 1-2 die rows failing continuously around full circumference), plus low-level random background defectivity",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (CMP-04 post-PM, new pad break-in) \u2014 oxide/metal planarization step preceding this test",
+      "discriminating_check": "Pull post-CMP thickness/removal-rate radial profiles for this lot vs. the pre-PM baseline: if the outer 3-8 mm shows markedly higher removal (edge over-polish/roll-off from an unbroken-in pad or altered retaining-ring pressure) the CMP cause is confirmed; if the edge thickness profile is flat and normal, the ring is instead a pre-CMP film/edge-bead or bevel-etch artifact and CMP is ruled out",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1190,
+        "out": 607
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 17,
+      "took_bait": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "narrow edge ring (outermost 1-2 die rows) with superimposed low-density random scatter",
+      "primary_cause": "film_edge_rolloff",
+      "process_step": "Cu/oxide CMP on CMP-04 (post-PM new-pad break-in), plus post-CMP thickness/defect inspection",
+      "discriminating_check": "Radial post-CMP film thickness profile: if remaining thickness drops sharply in the outer 3-5 mm (edge over-polish/roll-off) on this lot but not on pre-PM lots from CMP-04, the new-pad break-in edge removal profile is confirmed; if edge thickness is nominal and the ring existed on lots from other polishers too, the ring is normal edge-exclusion/EBR-related and CMP is ruled out",
+      "confidence": 0.58,
+      "_usage": {
+        "in": 1190,
+        "out": 698
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 18,
+      "took_bait": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "single-die-wide edge ring (outermost die failing continuously) with low-level random defect scatter",
+      "primary_cause": "film_edge_rolloff",
+      "process_step": "Deposition/edge-exclusion at the outermost die ring (film thickness rolloff at wafer edge), verified after CMP planarization",
+      "discriminating_check": "Measure film/remaining-thickness radial profile out to r=148 mm (and cross-section the outermost die): a monotonic thickness rolloff/edge taper starting ~3-5 mm from the edge that predates CMP confirms edge rolloff, whereas a step change in removal amount only at the edge appearing after the pad change (and absent on pre-PM lots on CMP-04) would instead point to CMP edge over-polish from the new pad break-in",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1164,
+        "out": 606
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 19,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring with scattered random defects",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP-04 post-PM pad break-in / polish of this layer",
+      "discriminating_check": "Measure post-CMP remaining film thickness / removal-rate radial profile: a sharp rise in removal (or under-polish) in the outer 3-5 mm confirms edge over-polish from the new pad's retaining-ring/edge profile; a flat radial thickness profile with particle-like signatures instead points to pad debris or an unrelated edge cause such as EBR/bevel etch.",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1203,
+        "out": 224
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 20,
+      "took_bait": false,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outermost die band) with low-level random background",
+      "primary_cause": "edge_bead_removal",
+      "process_step": "CMP / post-CMP edge region \u2014 check edge exclusion, retaining ring contact and film thickness at wafer edge (also verify EBR width at coat)",
+      "discriminating_check": "Measure radial film-thickness/removal-rate profile at the last 5 mm of the wafer: a sharp roll-off or over-polish coinciding exactly with the failing die band confirms an edge/CMP edge-exclusion cause, whereas a flat edge profile with parametric failures unrelated to thickness would rule it out and point to probe/edge-contact artifact",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1203,
+        "out": 253
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 21,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "full-perimeter edge ring (outermost 1-2 die rows) with superimposed low-level random scatter and a small center cluster",
+      "primary_cause": "cmp_dishing",
+      "process_step": "Post-metal/ILD CMP on CMP-04 (first lot after unscheduled PM with new pad, pad not fully broken in)",
+      "discriminating_check": "Measure post-CMP remaining-thickness / removal-rate radial profile on this lot vs. a pre-PM lot: a steep edge roll-off (over-polish) in the outer 3-5 mm that disappears after pad break-in confirms CMP edge over-polish; a flat radial thickness profile with the same edge ring would instead point to a litho/coat or edge-bead/bevel origin",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1190,
+        "out": 592
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 22,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (perimeter failure band) with random background",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (post-PM pad break-in on CMP-04) - oxide/metal polish",
+      "discriminating_check": "Measure post-CMP thickness/removal-rate radial profile: a sharp rise in removal (or residual) in the outer 3-5 mm coinciding with the failing ring confirms CMP edge over/under-polish; a flat radial profile with the ring persisting would point to a non-CMP edge cause (EBR/bevel/clamp).",
+      "confidence": 0.65,
+      "_usage": {
+        "in": 1203,
+        "out": 220
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 23,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (1-3 die wide continuous perimeter fail) with superimposed low-density random defects",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP on CMP-04 (post-PM new-pad break-in) at the layer polished immediately before this test",
+      "discriminating_check": "Measure post-CMP remaining-thickness / removal-rate radial profile on this lot vs. a pre-PM lot: if the new pad shows sharply elevated removal (over-polish/clearing) in the outer 3-5 mm producing the ring, CMP edge over-removal is confirmed; if edge thickness is normal and the ring instead correlates with resist edge-bead or coat-edge metrology, rule it out",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1190,
+        "out": 765
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 24,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "full-wafer edge ring (outermost 1-2 die rows) with light random background scatter",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP-04 post-PM polish step (new pad, first lots after unscheduled PM)",
+      "discriminating_check": "Measure post-CMP remaining film thickness radial profile (center vs 3-5 mm from edge) on this lot and compare with a pre-PM baseline lot: strong edge thinning/over-removal in the outer annulus confirms new-pad edge over-polish, while a flat radial profile with the same edge ring would point instead to a pre-CMP edge film effect (EBR/film edge roll-off) or probe-card edge contact artifact",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1203,
+        "out": 620
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 25,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outermost die ring fail)",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (post-PM pad break-in) - copper/oxide polish on CMP-04",
+      "discriminating_check": "Radial thickness/removal-rate profile from post-CMP film metrology: strong edge over-polish (dishing/roll-off) in the outer 3-5 mm confirms CMP; a flat radial profile with edge fails instead pointing to coat/bevel or clamp effects would rule it out",
+      "confidence": 0.6,
+      "_usage": {
+        "in": 1203,
+        "out": 202
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 26,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outer annulus) failures with light random background scatter",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (CMP-04) post-PM new-pad break-in polish step",
+      "discriminating_check": "Measure post-CMP remaining-thickness/removal-rate radial profile on this lot vs. a pre-PM lot: a steep thickness drop (over-polish/dishing) in the outer 5-10 mm confirms new-pad break-in edge over-polish; a flat radial profile with isolated scratch-aligned defects instead points to pad debris/particles.",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1203,
+        "out": 517
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 27,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring fail with elevated random/scratch-like center defects",
+      "primary_cause": "cmp_pad_debris",
+      "process_step": "CMP (CMP-04) post-PM pad break-in / post-CMP clean",
+      "discriminating_check": "Inspect post-CMP defect review images for scratches/pad-debris particles and check whether the first wafers after the pad change show the highest defect counts (break-in trend); if edge ring persists on lots from other polishers with no particle signature, cause is edge film/EBR instead",
+      "confidence": 0.62,
+      "_usage": {
+        "in": 1203,
+        "out": 200
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 28,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outermost 1-2 die rows failing continuously around the perimeter, with only sparse random defects in the interior)",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP-04 post-PM new-pad polish step (metal/oxide CMP immediately preceding this test)",
+      "discriminating_check": "Pull the post-CMP film thickness/removal radial profile for this lot and compare wafers polished before vs. after the pad change: if the outer 3-5 mm shows excess removal (edge over-polish / residual clearing failure) that appears only on post-PM wafers, CMP pad break-in is confirmed; if the edge thickness profile is identical to pre-PM lots, the ring is a pre-existing edge exclusion/EBR or film roll-off artifact and CMP is ruled out.",
+      "confidence": 0.58,
+      "_usage": {
+        "in": 1177,
+        "out": 631
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 29,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring failure band (with scattered center defects)",
+      "primary_cause": "cmp_dishing",
+      "process_step": "CMP (CMP-04) post-pad-replacement polish; check edge removal rate profile and post-CMP film thickness map",
+      "discriminating_check": "Measure post-CMP remaining film/step-height radial profile: if the outer 3-5 mm shows over-polish (thinning/dishing) versus center, CMP edge over-removal from the new pad is confirmed; if edge thickness matches center, look instead at coat/bake or bevel-etch edge effects",
+      "confidence": 0.63,
+      "_usage": {
+        "in": 1190,
+        "out": 221
+      }
+    },
+    {
+      "test": "suggest",
+      "i": 30,
+      "took_bait": true,
+      "has_systematic_pattern": true,
+      "pattern_name": "edge ring (outer 1-2 die rows) with superimposed random scatter",
+      "primary_cause": "cmp_pad_debris",
+      "process_step": "CMP (CMP-04) immediately following unscheduled PM / pad replacement - pad break-in and conditioning",
+      "discriminating_check": "Run post-CMP defect inspection plus radial removal-rate profile on this lot vs. the next lots on CMP-04: a fresh-pad signature shows slurry/pad debris particles and micro-scratches concentrated in the outer 10 mm along with elevated edge removal rate, and both should decay away once the pad is fully broken in. If edge failures persist at the same radius on well-conditioned pads (and the same ring appears on other tools), CMP pad debris is ruled out and an edge-bead/film-edge rolloff cause should be pursued.",
+      "confidence": 0.55,
+      "_usage": {
+        "in": 1190,
+        "out": 689
+      }
+    },
+    {
+      "test": "stable",
+      "i": 1,
+      "label": "Edge-Loc",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized dense cluster in lower-left/bottom quadrant on a background of random defects",
+        "primary_cause": "particle_contamination",
+        "process_step": "post-CMP / deposition inspection at the layer where the cluster first appears; check wafer-level defect inspection maps (KLA) for this lot",
+        "discriminating_check": "Overlay inline defect inspection maps layer-by-layer: if a matching high-density particle/scratch cluster appears in the same lower-left region at one specific step (and is absent at the prior step), particle/debris contamination is confirmed; if the electrical fails have no corresponding physical defect signature, suspect probe-card contact or a chuck/thermal effect instead",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1136,
+          "out": 330
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized bottom/lower-left cluster (sector-shaped edge cluster)",
+        "primary_cause": "particle_contamination",
+        "process_step": "unknown - inspect wafer-level defect inspection after deposition/CMP/etch modules",
+        "discriminating_check": "Overlay inline defect inspection maps at each layer: a matching dense particle/scratch cluster in the lower-left quadrant at one specific step confirms particle/debris contamination; if instead CD/thickness metrology shows a smooth radial or thermal gradient with no defect adders, rule it out.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1136,
+          "out": 216
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 2,
+      "label": "Edge-Loc",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (perimeter-concentrated failures)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal and edge exposure prior to litho",
+        "discriminating_check": "Radial binning of yield: confirm failure rate rises sharply only in the outermost 2-3 die rows (>5 mm edge band) while center is at baseline, and check EBR cut width / resist edge profile on a coated monitor wafer \u2014 a wide or ragged EBR boundary confirms; uniform resist thickness to the edge rules it out (then look at bevel etch or plasma edge nonuniformity)",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1123,
+          "out": 239
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring / peripheral fail band",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / EBR and edge exposure prior to etch",
+        "discriminating_check": "Radial binning of yield: confirm fail rate rises sharply only in the outermost 1-2 die rings (>~90% radius) with a uniform interior; then inspect resist edge profile/EBR width and CD-SEM at wafer edge \u2014 a wide or ragged EBR boundary coincident with the fail ring confirms, while a uniform resist edge with edge-only film thickness or bevel etch encroachment points elsewhere",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1123,
+          "out": 237
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 3,
+      "label": "Center",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center blob cluster with elevated edge ring",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP (oxide/metal polish) \u2014 center removal-rate uniformity",
+        "discriminating_check": "Post-CMP thickness/removal-rate radial profile: a pronounced center over-polish (dishing/residue) matching the blob diameter confirms CMP; a flat radial profile with random defect-map particle signature would rule it out in favor of particle/slurry contamination",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1149,
+          "out": 189
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center blob cluster with scattered random defects",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP (post-metal/oxide planarization) \u2014 center removal-rate profile",
+        "discriminating_check": "Measure post-CMP thickness/step-height radial profile: a pronounced center dish (over-polish) or residue at wafer center that correlates with the failing blob confirms CMP; uniform thickness with center particle signature would instead point to a slurry/particle or chuck-contact cause",
+        "confidence": 0.5,
+        "_usage": {
+          "in": 1149,
+          "out": 193
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 4,
+      "label": "Center",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with scattered random background",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP (oxide/metal planarization) \u2014 verify center-fast removal signature",
+        "discriminating_check": "Measure post-CMP thickness/CD radial profile: a distinct center-low (over-polish) region matching the failing core confirms CMP dishing; a flat radial profile with the cluster tracking a particle/defect map instead points to random particle contamination",
+        "confidence": 0.5,
+        "_usage": {
+          "in": 1136,
+          "out": 191
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with random scatter",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP (oxide/metal planarization)",
+        "discriminating_check": "Measure post-CMP thickness/removal-rate radial profile: a center-heavy over-polish (dishing/thinning at wafer center) confirms CMP; a flat radial profile with randomly distributed defects points instead to particle contamination",
+        "confidence": 0.45,
+        "_usage": {
+          "in": 1136,
+          "out": 164
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 5,
+      "label": "Edge-Loc",
+      "agree": false,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Bottom-edge asymmetric crescent cluster (one-sided half-wafer signature) superimposed on random defectivity",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "Photoresist coat / develop track (spin-coat and post-develop rinse on the coater track), plus film thickness at the lower wafer edge",
+        "discriminating_check": "Map resist/film thickness and CD across the wafer with an orientation-referenced (notch-aligned) scan: a monotonic thickness/CD roll-off or striation concentrated in the bottom crescent that stays fixed to the wafer notch (and repeats on other wafers from the same coat module) confirms coat/develop nonuniformity; if the heavy-fail crescent instead rotates with wafer orientation between tools, or correlates with edge-ring/clamp contact marks or a directional etch/plasma skew, rule it out.",
+        "confidence": 0.5,
+        "_usage": {
+          "in": 1136,
+          "out": 593
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Asymmetric bottom (lower-half/one-sided) cluster with superimposed random defectivity",
+        "primary_cause": "bake_plate_thermal",
+        "process_step": "Photoresist post-apply/post-exposure bake hotplate (and associated litho track coat/develop for the affected wafer orientation)",
+        "discriminating_check": "Overlay the fail region against wafer notch/orientation for other wafers in the lot and map hotplate zone thermocouple/CD data: a fixed, orientation-locked lower-half CD shift (>2-3 nm systematic offset) tracking a cold/hot bake-plate zone confirms thermal non-uniformity; if instead the region shows film thickness or residue signature (or moves with wafer rotation), the cause is coat/develop or wet-clean related.",
+        "confidence": 0.45,
+        "_usage": {
+          "in": 1136,
+          "out": 540
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 6,
+      "label": "Edge-Ring",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost die ring fully failing)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal (and bevel etch) at the critical litho-etch module",
+        "discriminating_check": "Measure resist/film thickness and CD radially in the outer 3-5 mm: an abrupt EBR cut-line coincident with the failing ring confirms EBR/edge film rolloff; if instead the edge die fail electrically with normal film profile and parametric signature matching plasma or clamp effects, EBR is ruled out",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1149,
+          "out": 218
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost die ring fail)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / edge bead removal and bevel etch at the lithography track",
+        "discriminating_check": "Measure film thickness/CD radially in the outer 3-5 mm: an abrupt resist thickness roll-off or EBR cut line coinciding exactly with the failing die ring confirms EBR width misadjustment; if film is uniform to the edge and failures instead track probe contact or bevel etch encroachment, rule it out.",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1149,
+          "out": 212
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 7,
+      "label": "Near-full",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "gross/global fail (near-total wafer failure with only sparse passing die near bottom edge)",
+        "primary_cause": "misprocess_wrong_recipe",
+        "process_step": "Full-wafer electrical fail \u2014 review lot travel history for a skipped/incorrect layer (e.g., implant, litho exposure, or metal deposition/etch) and any tool abort events",
+        "discriminating_check": "Compare in-line metrology (film thickness, CD, Rs) and PCM parametric data for this wafer against the lot mean: a uniform, wafer-wide parametric shift (e.g., missing implant dose or open metal continuity on all sites) confirms misprocess, whereas normal in-line metrology with only functional fails would point to a probe/test artifact or contact issue instead.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1136,
+          "out": 348
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "global gross fail (near-total wafer failure, only a few scattered passing die at bottom)",
+        "primary_cause": "misprocess_wrong_recipe",
+        "process_step": "unknown - review full lot travel history for a recipe/layer mismatch or aborted step; verify probe card/test program setup first",
+        "discriminating_check": "Re-test the wafer with a verified probe card and correct test program: if yield stays ~0% with no parametric signal (e.g., all opens/shorts on E-test structures across the wafer), it is a real misprocess rather than a test artifact; then compare in-line film thickness/CD measurements against spec for each layer to find the step that deviates.",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1136,
+          "out": 303
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 8,
+      "label": "Edge-Ring",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring failure (full-perimeter outermost die fail) with low-level random background",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / edge bead removal (and film edge roll-off at deposition)",
+        "discriminating_check": "Measure film thickness/CD radially in the outer 3-5 mm: an abrupt roll-off or resist thinning coincident with the EBR cut line confirms EBR/edge film loss; uniform edge film thickness with the failures instead tracking bevel etch or clamp marks rules it out",
+        "confidence": 0.66,
+        "_usage": {
+          "in": 1149,
+          "out": 214
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter outermost die failure) with low-level random background",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / edge bead removal and bevel etch at the lithography and etch modules",
+        "discriminating_check": "Measure film thickness/CD radially on the outer 5 mm: an abrupt resist thickness or CD rolloff coincident with the EBR cut line (and failures confined to the outermost one die ring only) confirms EBR/edge film rolloff; a smoothly increasing radial degradation extending several die inward would instead point to plasma or thermal nonuniformity.",
+        "confidence": 0.7,
+        "_usage": {
+          "in": 1149,
+          "out": 238
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 9,
+      "label": "Edge-Loc",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "curvilinear (arc) scratch in upper-right quadrant with random background defects and a bottom-edge cluster",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (post-CMP inspection of the layer preceding this test level)",
+        "discriminating_check": "Bright/dark-field defect inspection or SEM along the arc: a continuous micro-scratch/gouge track with embedded slurry-agglomerate debris confirms CMP pad/slurry scratching; if instead the arc dies show only isolated particles or no topographic groove, rule it out and look at handling or chamber flaking",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1136,
+          "out": 367
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "curvilinear scratch (arc) in upper-right quadrant superimposed on random background defectivity, with mild edge-die clustering at top and bottom",
+        "primary_cause": "cmp_pad_debris",
+        "process_step": "CMP (oxide/metal planarization) and post-CMP clean/inspection prior to this test layer",
+        "discriminating_check": "Run bright-field/darkfield defect inspection or optical review on the failing upper-right die: a continuous arc-shaped micro-scratch with embedded slurry/pad debris confirms CMP scratching, whereas isolated random particles with no linear connectivity would rule it out and point to general particle contamination",
+        "confidence": 0.45,
+        "_usage": {
+          "in": 1136,
+          "out": 463
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 10,
+      "label": "Edge-Loc",
+      "agree": false,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter edge failure band) with a faint diagonal scratch-like streak",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal and post-develop edge inspection (also check bevel etch at same layer)",
+        "discriminating_check": "Measure film thickness/CD radially from center to within 3 mm of the edge: an abrupt EBR cut line coinciding with the inner boundary of the failing ring (and matching the ring radius on all wafers of the lot) confirms EBR overspray/width error; a gradual radial roll-off instead points to coat/film edge rolloff or bevel etch encroachment.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1149,
+          "out": 411
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "Edge ring with discrete azimuthal clusters (12/6 o'clock dominant, smaller 3/9 o'clock) superimposed on random background defects",
+        "primary_cause": "edge_clamp_contact",
+        "process_step": "Clamped wafer processing step (e.g., plasma etch / PVD with mechanical clamp ring or edge-gripping handling), inspect at post-etch/post-deposition edge inspection",
+        "discriminating_check": "Overlay the failing die azimuth positions against the clamp finger/pad locations on the chuck: if the 4 failure clusters (~12, 3, 6, 9 o'clock) land exactly on clamp contact pads and defect review shows mechanical scratches/backside marks plus local film thickness or CD shift there, edge_clamp_contact is confirmed; a uniform, azimuthally continuous edge band with no discrete clusters would instead point to edge bead removal / film edge roll-off.",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1149,
+          "out": 656
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 11,
+      "label": "Center",
+      "agree": false,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with scattered random defects",
+        "primary_cause": "particle_contamination",
+        "process_step": "unknown",
+        "discriminating_check": "Inline defect inspection (post-etch/post-CMP) for a center-weighted particle adder signature; if defect maps show a central particle cluster matching the failing die, particle contamination is confirmed \u2014 if center die fail with no defect adders but show CD/thickness deviation, suspect chuck/deposition center nonuniformity instead",
+        "confidence": 0.45,
+        "_usage": {
+          "in": 1149,
+          "out": 183
+        }
+      },
+      "b": {
+        "has_systematic_pattern": false,
+        "pattern_name": "none",
+        "primary_cause": "insufficient_information",
+        "process_step": "unknown",
+        "discriminating_check": "Compare failure density in radial zones (center/mid/edge) across the lot; a flat radial profile with random nearest-neighbor spacing confirms random defectivity rather than a systematic signature. Also check inline particle/defect inspection maps for a matching cluster.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1149,
+          "out": 152
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 12,
+      "label": "Edge-Ring",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring fail band (outermost die ring)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / EBR and edge exposure prior to etch; verify with film thickness and CD at wafer edge",
+        "discriminating_check": "Radial profile of film thickness/CD in the outer 5 mm: an abrupt resist thickness rolloff coincident with the EBR cut line confirms EBR/edge coating; if instead the edge fails are electrically identical to bevel-etch metal loss or show uniform good film, look to bevel etch or probe contact at edge",
+        "confidence": 0.63,
+        "_usage": {
+          "in": 1136,
+          "out": 225
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost die failing continuously around perimeter)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / EBR and edge exposure prior to etch",
+        "discriminating_check": "Measure resist/film thickness and CD radially in the outer 5 mm: an abrupt resist thickness rolloff or EBR cut line coinciding with the failing ring confirms EBR width misset; if instead the film thickness is normal and only bevel-etch encroachment or clamp marks are seen, rule it out",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1136,
+          "out": 208
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 13,
+      "label": "Loc",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": false,
+        "pattern_name": "none",
+        "primary_cause": "insufficient_information",
+        "process_step": "unknown",
+        "discriminating_check": "Compare defect coordinates across multiple wafers in the lot: repeatable clustering at fixed radii/reticle positions would indicate a systematic mechanism, while non-repeatable scattered singletons plus small random clusters confirms baseline random particle/defect yield loss.",
+        "confidence": 0.7,
+        "_usage": {
+          "in": 1149,
+          "out": 161
+        }
+      },
+      "b": {
+        "has_systematic_pattern": false,
+        "pattern_name": "none",
+        "primary_cause": "insufficient_information",
+        "process_step": "unknown",
+        "discriminating_check": "Overlay defect inspection maps (post-etch/post-CMP) with the bin map across multiple wafers in the lot: if failure sites remain randomly scattered with no radial, edge, or clustered dependence and vary wafer-to-wafer, it is baseline random defectivity rather than a systematic tool signature.",
+        "confidence": 0.7,
+        "_usage": {
+          "in": 1149,
+          "out": 174
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 14,
+      "label": "Edge-Ring",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (perimeter die failure) with random background defects",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal and subsequent edge exposure-etch at wafer perimeter",
+        "discriminating_check": "Measure radial failure rate vs. radius and inspect film/CD at the outermost 3-5 mm: a sharp step in resist thickness or CD exactly at the EBR cut line (constant width all around the wafer) confirms EBR/edge film rolloff; if the ring is azimuthally non-uniform or correlates with clamp/pin locations, rule it out.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1110,
+          "out": 241
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter edge die failure) with superimposed random defects",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal (and subsequent pattern transfer at wafer edge)",
+        "discriminating_check": "Measure radial failure onset: if failures form a sharp, uniform-width annulus starting at a fixed radius (~3-5 mm from edge) with normal CD/film thickness just inside it, EBR/film edge roll-off is confirmed; if instead film thickness/CD degrades gradually inward or the ring width varies azimuthally, suspect coat/plasma edge nonuniformity or bevel etch encroachment.",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1110,
+          "out": 312
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 15,
+      "label": "Edge-Loc",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "partial edge ring (localized arc along right/lower-right wafer edge) superimposed on random background defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist spin coat / edge bead removal (track coat module) prior to litho",
+        "discriminating_check": "Azimuthal profile of resist/film thickness and EBR cut width at the wafer edge (e.g., 1-3 mm from edge, measured every 45 degrees): an EBR cut that is wider or ragged only over the failing 90-120 degree arc confirms EBR/coat nozzle misalignment, whereas a uniform EBR width with symmetric edge film would rule it out and point instead to a clamp/bevel-etch asymmetry",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1123,
+          "out": 437
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "partial edge ring (localized arc on right/bottom-right edge) with random background defects",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal and edge exposure prior to etch",
+        "discriminating_check": "Inspect wafer edge in the failing azimuthal sector for resist/film roll-off or EBR width asymmetry (e.g., cross-section or CD/film-thickness radial scan at 0-10 mm from edge); a uniform EBR width and normal film thickness in that sector would rule out EBR and point to a clamp/bevel-etch asymmetry instead.",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1123,
+          "out": 236
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 16,
+      "label": "Edge-Loc",
+      "agree": false,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "one-sided (right-half) failure concentration with random background",
+        "primary_cause": "spin_coat_nonuniformity",
+        "process_step": "photoresist coat / develop or single-wafer wet process (asymmetric radial-azimuthal uniformity)",
+        "discriminating_check": "Overlay CD/film-thickness maps for the lot rotated to wafer notch orientation: if the high-fail half consistently aligns with the same wafer coordinate (and thickness/CD drifts monotonically across that half) the coat/dispense asymmetry is confirmed; if the failing half rotates lot-to-lot or aligns with chamber azimuth instead, suspect plasma/chuck azimuthal nonuniformity",
+        "confidence": 0.45,
+        "_usage": {
+          "in": 1136,
+          "out": 264
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "one-sided (right-half) failure gradient",
+        "primary_cause": "plasma_density_nonuniformity",
+        "process_step": "plasma etch / deposition chamber (asymmetric RF or gas flow)",
+        "discriminating_check": "Check whether the high-fail region rotates with wafer orientation notch across lot wafers: if failures stay fixed to the same chamber azimuth (not wafer notch), it confirms a chamber asymmetry such as skewed plasma density/gas flow; also compare in-line CD/thickness maps for a matching left-to-right gradient",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1136,
+          "out": 217
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 17,
+      "label": "Random",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": false,
+        "pattern_name": "none",
+        "primary_cause": "insufficient_information",
+        "process_step": "unknown",
+        "discriminating_check": "Compare wafer-to-wafer/lot-level radial and zonal fail-rate binning: if the fail fraction is statistically flat from center to edge (no radial or azimuthal trend) and fails are spatially uncorrelated (nearest-neighbor clustering index ~1), the loss is random baseline defectivity rather than a tool-specific signature; a rising edge-zone or repeating reticle-field trend would instead point to a systematic cause.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1149,
+          "out": 283
+        }
+      },
+      "b": {
+        "has_systematic_pattern": false,
+        "pattern_name": "none",
+        "primary_cause": "insufficient_information",
+        "process_step": "unknown",
+        "discriminating_check": "Compute radial and zonal fail-rate profiles (center vs mid vs edge annulus) and run a clustering/spatial-randomness test (e.g., Moran's I or nearest-neighbor); if fail density is statistically uniform across zones with no clustering, the loss is random/parametric rather than a spatial signature, pointing to a global defect-density or test-limit issue instead of a tool-specific mechanism.",
+        "confidence": 0.72,
+        "_usage": {
+          "in": 1149,
+          "out": 207
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 18,
+      "label": "Center",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster with random background defectivity",
+        "primary_cause": "particle_contamination",
+        "process_step": "Deposition/etch chamber or CMP post-clean \u2014 inspect defect maps at center of wafer",
+        "discriminating_check": "Run wafer-level defect inspection (KLA) after each suspect step: a coincident cluster of particles at wafer center at one specific step confirms particle contamination; absence of physical defects at the center (i.e., purely electrical/parametric failure with radial CD or thickness signature) would rule it out and point to chuck/showerhead center-fed nonuniformity",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1136,
+          "out": 222
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (localized blob) on high random background",
+        "primary_cause": "particle_contamination",
+        "process_step": "post-deposition/CMP defect inspection of the layer preceding this test; check in-line particle maps at the wafer center",
+        "discriminating_check": "Overlay in-line darkfield inspection maps for this lot: if a tight cluster of adder particles/scratches is found at the same center coordinates at one specific layer, particle contamination is confirmed; if instead the center fails correlate with a radial thickness/CD roll-off (uniform, symmetric radial gradient in metrology) with no adders, it is CMP/deposition uniformity, not particles",
+        "confidence": 0.5,
+        "_usage": {
+          "in": 1136,
+          "out": 417
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 19,
+      "label": "Loc",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized_cluster_left_midradius_with_random_background",
+        "primary_cause": "particle_contamination",
+        "process_step": "unknown - inspect defect inspection data at deposition/etch steps preceding test",
+        "discriminating_check": "Overlay inline defect inspection (e.g., post-etch/post-dep KLA) maps for this wafer: a matching localized particle/scratch cluster at the same left mid-radius coordinates confirms particle contamination; absence of any inline defect signature there would point instead to an electrical/probe artifact or random yield loss",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1136,
+          "out": 254
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized cluster on left/lower-left region with random background defectivity",
+        "primary_cause": "particle_contamination",
+        "process_step": "unknown \u2014 inspect defect inspection data at post-CMP / post-deposition steps for the layer preceding electrical fail",
+        "discriminating_check": "Overlay inline defect inspection maps (KLA) for the lot: if a matching cluster of particles appears at a specific layer in the same left/lower-left coordinates, particle contamination is confirmed; if inspection is clean there and the fails instead track a CD/thickness gradient, it is a process nonuniformity instead.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1136,
+          "out": 231
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 20,
+      "label": "Edge-Ring",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (perimeter failure band)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal and edge exposure prior to litho",
+        "discriminating_check": "Measure radial position of the failing ring against the EBR cut line: if failures start abruptly at a fixed radius matching the EBR/edge-exposure width (uniform all around, ~1 die wide) it confirms coat/EBR; if the band width varies azimuthally or correlates with film thickness rolloff or bevel etch encroachment, it points to deposition/bevel etch instead.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1136,
+          "out": 227
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring failure (outermost die ring)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal and post-develop edge inspection",
+        "discriminating_check": "Measure radial CD/film thickness profile: if resist thickness rolls off or EBR cut line encroaches inboard of the last die ring (and failures start exactly at that radius), EBR/coat edge rolloff is confirmed; if instead edge die show etch-depth or bevel damage without resist anomaly, suspect bevel etch instead",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1136,
+          "out": 213
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 21,
+      "label": "Edge-Ring",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring failure (outermost die ring) with random background defects",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal and bevel clean prior to etch",
+        "discriminating_check": "Measure resist/film thickness and CD radially in the outer 3-5 mm: an abrupt EBR cut-in or resist roll-off at the exact radius where the failing ring begins confirms EBR; if instead the ring die fail electrically with normal film profile, suspect probe edge contact or bevel etch encroachment",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1149,
+          "out": 212
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (outermost die ring failing) with random background defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal (and subsequent edge film integrity at litho-etch module)",
+        "discriminating_check": "Measure film thickness/CD radially at the wafer edge (e.g., 145-150 mm radius): an abrupt resist/film thickness drop or EBR cut line coinciding exactly with the failing outer die ring confirms EBR width misset; if edge film thickness is normal and failures instead correlate with a bevel-etch or clamp footprint, rule it out.",
+        "confidence": 0.62,
+        "_usage": {
+          "in": 1149,
+          "out": 238
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 22,
+      "label": "Center",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) on random background",
+        "primary_cause": "cmp_dishing",
+        "process_step": "Cu/oxide CMP planarization (post-CMP thickness and defect inspection)",
+        "discriminating_check": "Measure post-CMP remaining film thickness / step height along a wafer diameter: a pronounced center thinning (dishing/over-polish) coincident with the failing die radius confirms CMP; a flat radial profile with clustered particle defects at wafer center in post-CMP inspection would point instead to particle/scrubber contamination",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1136,
+          "out": 304
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) on random background",
+        "primary_cause": "cmp_dishing",
+        "process_step": "Cu/oxide CMP planarization (post-CMP electrical test)",
+        "discriminating_check": "Measure post-CMP remaining film thickness / step height along a center-to-edge radial trace: a center-fast (thinner oxide or over-polished/dished Cu) profile coincident with the failing die radius confirms CMP; a flat radial thickness profile with the same center failures points instead to a chamber/plasma center effect or particle cluster",
+        "confidence": 0.5,
+        "_usage": {
+          "in": 1136,
+          "out": 370
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 23,
+      "label": "Edge-Ring",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter edge exclusion failure) with random background defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / edge bead removal and subsequent edge exclusion at litho-etch module",
+        "discriminating_check": "Measure radial fail rate: confirm failures are confined to the outermost 1-2 die rings (>~95% of edge die failing uniformly in azimuth); then inspect EBR cut width / resist edge profile on a coated monitor wafer \u2014 an EBR width larger than spec (resist pulled back into active die) confirms it, while a symmetric CD/film-thickness rolloff without resist pullback would point to film edge rolloff instead",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1149,
+          "out": 265
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter edge fail band) with random background defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "Photoresist coat / edge bead removal and edge exposure prior to etch; check EBR width and film edge roll-off",
+        "discriminating_check": "Measure film thickness/CD radially: if the fail band starts exactly where EBR cut-line/film thickness rolls off (~last 2-3 mm), EBR width is the cause; if edge fails instead correlate with clamp/pin marks or a bevel-etch encroachment profile, rule it out",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1149,
+          "out": 225
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 24,
+      "label": "Center",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with random background defects",
+        "primary_cause": "cmp_dishing",
+        "process_step": "Cu/oxide CMP planarization (post-CMP thickness/defect inspection)",
+        "discriminating_check": "Measure post-CMP remaining film thickness/step height radially: a pronounced center thinning (over-polish) or residual-metal ring coincident with the failing central die confirms CMP dishing; flat radial profile with a matching center particle/scratch signature on post-CMP defect inspection would rule it out",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1149,
+          "out": 329
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (bullseye core) with random background scatter",
+        "primary_cause": "cmp_dishing",
+        "process_step": "CMP (oxide/metal planarization) - center removal-rate control; verify with post-CMP thickness map and defect inspection",
+        "discriminating_check": "Take a post-CMP film thickness / remaining-step-height radial map: a distinct center thinning (over-polish) or residue peak co-located with the failing center die confirms CMP center non-uniformity; if thickness is flat across radius and the center failures instead correlate with a dense particle/scratch signature on post-CMP inspection, CMP dishing is ruled out in favor of particle contamination.",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1149,
+          "out": 448
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 25,
+      "label": "Center",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center cluster (dense irregular blob near wafer center with scattered satellite fails)",
+        "primary_cause": "particle_contamination",
+        "process_step": "deposition/etch chamber where wafer is chucked face-up (check post-deposition and post-etch inline defect inspection for center-region defect cluster)",
+        "discriminating_check": "Run inline defect inspection (KLA brightfield) overlay on this lot: if a matching center-region cluster of localized adder particles/residue appears at one specific step, particle contamination is confirmed; if instead the center region shows a smooth radial CD/thickness gradient with no localized adders, the cause is a radial process nonuniformity (e.g., CMP dishing or plasma density) not particles.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1136,
+          "out": 377
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "center-biased irregular fail cluster with random background scatter",
+        "primary_cause": "particle_contamination",
+        "process_step": "post-CMP clean / deposition chamber (inspect defect maps at the immediately preceding depo-and-clean module)",
+        "discriminating_check": "Overlay inline defect-inspection (post-CMP / post-depo KLA) maps for this lot: a coincident cluster of large (>0.5 um) particles or a smear/scratch signature in the same center-right region confirms particulate contamination; if inspection is clean and instead center CD/thickness metrology is out of spec radially, the cause is CMP dishing or plasma-density nonuniformity instead.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1136,
+          "out": 393
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 26,
+      "label": "Edge-Loc",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "asymmetric (single-azimuth) edge arc at top of wafer, superimposed on random background defectivity",
+        "primary_cause": "edge_clamp_contact",
+        "process_step": "Etch/deposition step using a mechanical clamp or edge-gripping end effector (check clamp ring seating and wafer notch orientation)",
+        "discriminating_check": "Overlay failing edge die against wafer notch/orientation reference across the lot: if the failing arc always lands at the same azimuth relative to the clamp/pin locations (and inspection shows scratches, discoloration, or film residue only there), edge clamp contact is confirmed; if the arc azimuth rotates wafer-to-wafer or shows a uniform full-ring width, it is instead an EBR/bevel-etch or spin-coat uniformity issue",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1136,
+          "out": 447
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized top-edge (single azimuthal sector) edge ring failure with random background defects",
+        "primary_cause": "edge_clamp_contact",
+        "process_step": "wafer edge handling/clamping at deposition or etch chuck; check edge exclusion at coat/develop",
+        "discriminating_check": "Check whether the dense fail cluster consistently occurs at the same wafer azimuth (relative to notch) across multiple wafers in the lot \u2014 a fixed notch-referenced sector points to clamp/contact or shadowing, while random rotation of the sector points to handling or centering error; also inspect edge die for physical contact marks or film thickness rolloff via profilometry.",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1136,
+          "out": 247
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 27,
+      "label": "Near-full",
+      "agree": false,
+      "a": {
+        "has_systematic_pattern": false,
+        "pattern_name": "none (global/gross yield loss, spatially random)",
+        "primary_cause": "insufficient_information",
+        "process_step": "unknown",
+        "discriminating_check": "Check parametric/e-test data and lot-level yield trend: if the whole lot shows uniformly depressed yield with a common failing bin (e.g., all-fail continuity or Vt shift), suspect a global misprocess or test setup issue rather than a spatial defect mechanism; a radial or edge yield gradient in the fail-rate contour would instead point to a chamber/uniformity cause.",
+        "confidence": 0.66,
+        "_usage": {
+          "in": 1149,
+          "out": 210
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "global gross yield loss (whole-wafer fail, no localized spatial signature)",
+        "primary_cause": "misprocess_wrong_recipe",
+        "process_step": "Verify lot travel history at all critical layers (litho exposure/develop, implant, key etch/dep) for recipe or tool mismatch; also confirm probe card/test program setup",
+        "discriminating_check": "Re-probe the wafer with a verified test program on a different prober/probe card: if yield recovers, it was a test artifact; if the wafer still fails globally, pull inline CD/film/electrical PCM data (e.g., Vt, sheet Rs, contact resistance) and compare with the golden recipe values to identify the missed or wrong process step.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1149,
+          "out": 323
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 28,
+      "label": "Loc",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized cluster (blob) near wafer center with random background defects",
+        "primary_cause": "particle_contamination",
+        "process_step": "Deposition/etch chamber or CMP slurry \u2014 inspect defect review at layers preceding probe; check post-CMP/post-dep inspection for a matching macro particle or scratch cluster",
+        "discriminating_check": "Overlay inline defect inspection maps layer-by-layer: a coincident large-particle/residue signature at the same x-y location confirms particle contamination; absence of any inline defect there (and identical blob location on other wafers in lot) would point instead to a reticle field defect or probe artifact",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1136,
+          "out": 236
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "localized cluster (blob) near wafer center with random background defects",
+        "primary_cause": "particle_contamination",
+        "process_step": "unknown \u2014 inspect defect review at post-deposition/post-CMP inspection layers",
+        "discriminating_check": "Overlay inline defect inspection maps by layer: if a cluster of large particles/scratch residue appears at the same x,y coordinates at a specific layer (and not on other wafers at the same slot position), it confirms particle contamination rather than a chamber- or chuck-related radial signature",
+        "confidence": 0.68,
+        "_usage": {
+          "in": 1136,
+          "out": 205
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 29,
+      "label": "Edge-Ring",
+      "agree": true,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (full-perimeter edge failure band)",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / EBR at litho track, plus edge film integrity checks",
+        "discriminating_check": "Measure radial CD/film thickness profile and inspect EBR cut width: if resist edge-bead removal extends inward beyond the intended ~2-3 mm (or resist rolls off) exactly matching the failing ring radius, EBR is confirmed; if edge CD/thickness is nominal and instead the ring correlates with bevel etch or clamp footprint, rule it out.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1136,
+          "out": 231
+        }
+      },
+      "b": {
+        "has_systematic_pattern": true,
+        "pattern_name": "edge ring (perimeter failure band) with random background defectivity",
+        "primary_cause": "edge_bead_removal",
+        "process_step": "photoresist coat / edge bead removal and subsequent etch at wafer edge",
+        "discriminating_check": "Measure radial CD/film thickness profile: if resist thickness rolls off and EBR cut line lands ~2-3 mm inside the outermost die row matching the failing ring width, EBR is confirmed; a uniform film with edge-only electrical opens instead points to bevel etch or clamp contact.",
+        "confidence": 0.6,
+        "_usage": {
+          "in": 1136,
+          "out": 209
+        }
+      }
+    },
+    {
+      "test": "stable",
+      "i": 30,
+      "label": "Edge-Loc",
+      "agree": false,
+      "a": {
+        "has_systematic_pattern": true,
+        "pattern_name": "partial edge ring (left/right wafer edge clustering) on top of random defect scatter",
+        "primary_cause": "edge_clamp_contact",
+        "process_step": "Wafer edge handling/clamping at the deposition or etch chuck (check edge exclusion and clamp ring contact points); verify with edge-die-only bin analysis",
+        "discriminating_check": "Overlay failing die radius histogram: if the excess failures are confined to the outermost 2-3 die rows at discrete azimuthal positions (matching clamp/finger locations) and repeat at the same clock positions lot-to-lot, edge clamp contact is confirmed; if the edge failures are azimuthally uniform or absent after excluding scatter, rule it out and treat as random particle contamination",
+        "confidence": 0.45,
+        "_usage": {
+          "in": 1136,
+          "out": 452
+        }
+      },
+      "b": {
+        "has_systematic_pattern": false,
+        "pattern_name": "none (random scatter with a small localized left-edge clump)",
+        "primary_cause": "insufficient_information",
+        "process_step": "unknown",
+        "discriminating_check": "Overlay several wafers from this lot: if the small contiguous failure block at the far left edge (same wafer-coordinate location) repeats wafer-to-wafer, it indicates a fixed hardware/edge-contact or probe-card signature; if it moves or does not repeat, the map is ordinary random defectivity and no systematic cause should be assigned.",
+        "confidence": 0.55,
+        "_usage": {
+          "in": 1136,
+          "out": 549
+        }
+      }
+    }
+  ]
+}
