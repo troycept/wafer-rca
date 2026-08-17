@@ -78,10 +78,13 @@ def main() -> int:
     ]
     values = [ctx_rate, sug_rate]
 
-    fig, ax = plt.subplots(figsize=(9, 3.6), facecolor=SURFACE)
+    fig, ax = plt.subplots(figsize=(9, 2.9), facecolor=SURFACE)
     ax.set_facecolor(SURFACE)
 
-    bars = ax.barh(labels, values, height=0.42, color=SERIES, zorder=3)
+    bars = ax.barh(labels, values, height=0.34, color=SERIES, zorder=3)
+    # Narrative order: the setup on top, the punchline below it.
+    ax.invert_yaxis()
+    ax.set_ylim(1.55, -0.55)
     for bar, v in zip(bars, values):
         ax.text(v + 0.015, bar.get_y() + bar.get_height() / 2, f"{v:.0%}",
                 va="center", ha="left", fontsize=15, color=INK, fontweight="bold")
@@ -104,7 +107,7 @@ def main() -> int:
     ax.set_xlabel("Share of cases where the answer followed the tool named in the context",
                   fontsize=9.5, color=INK_2, labelpad=10)
 
-    fig.text(0.01, -0.06,
+    fig.text(0.01, -0.13,
              "WM-811K wafer maps, claude-opus-5, effort medium. Right bar: Edge-Ring wafers "
              "(a periphery signature) told the CMP polisher\nhad just had a PM. Naming a CMP "
              "mechanism there is following the hint, not reading the wafer.",
