@@ -1,76 +1,376 @@
 # WaferRCA knowledge base
 #
-# THIS FILE IS THE PROJECT. Everything else is scaffolding around it.
+# EVERY ENTRY BELOW IS A DRAFT WRITTEN BY A MODEL. NONE OF IT IS VERIFIED.
 #
-# Rules for filling it in:
-#   1. Write from memory FIRST. Do not look anything up on the first pass, and
-#      do not let a model draft it. A model produces fluent, plausible, subtly
-#      wrong process knowledge, and wrong is worse than empty here.
-#   2. Then verify against May & Spanos and semiengineering.com, and mark what
-#      you changed. Confidence field tracks that.
-#   3. Target 3-5 causes per pattern, 9 patterns, ~35 records.
+# It is here so you never face a blank page. Your job is to judge it, not to
+# author it from nothing. Judging is the part your fab time qualifies you for
+# and it is roughly 5x faster than generating.
 #
-# Field meanings:
-#   mechanism     the physical thing that went wrong, not the symptom
-#   step          where in the flow you go to look
-#   parameters    the specific knobs/logs to pull
-#   check         what you physically do first, in order
-#   discriminator the observation that separates THIS cause from the others in
-#                 this list. If it does not rule anything out, it is not a
-#                 discriminator, it is just another check.
-#   signature     how it behaves over time / across tools / across lots
-#   confidence    from_memory | verified | uncertain
+# Workflow, one pattern per session:
+#   status: draft     -> not yet reviewed by you.  Counts for NOTHING.
+#   status: kept      -> you read it and it is right as written.
+#   status: edited    -> you changed it. Say what you changed in `note`.
+#   status: rejected  -> wrong or not real. Leave it in with a `note` saying why.
+#                        Rejected entries are valuable: they become the
+#                        distractors in your benchmark.
 #
-# The discriminator field is the one nobody publishes and the reason this file
-# is worth releasing.
+# Only `kept` and `edited` count toward the ~35 target. Run:
+#   .venv/bin/python scripts/03_check_kb.py
+#
+# discriminator_type values come from kb/discriminators.md:
+#   D1 tool_commonality | D2 time_behaviour | D3 fixed_position
+#   D4 metrology | D5 slot_sequence | D6 test_vs_process
+#
+# Where a draft discriminator is weak or generic it is marked `WEAK` inline.
+# Those are the ones to attack first.
 
 patterns:
+  - pattern: Center
+    physics: radially symmetric non-uniformity peaked on the wafer axis
+    causes:
+      - mechanism: CMP over-polish at wafer center (dishing / erosion)
+        step: CMP
+        parameters: [down_force, carrier_platen_speed_ratio, pad_condition, slurry_flow, time_since_pad_change]
+        check: post-CMP thickness map, center vs mid-radius vs edge on the last 3 lots
+        discriminator: thickness map shows remaining film thin at center; effect follows polisher head, not lot
+        discriminator_type: D4
+        signature: worsens gradually with pad wear, steps back to baseline at pad change
+        status: draft
+        confidence: uncertain
+
+      - mechanism: spin coat thickness non-uniformity, dispense off-center or ramp wrong
+        step: litho track, coat
+        parameters: [spin_speed_ramp, dispense_volume, dispense_arm_position, exhaust_flow]
+        check: resist thickness radial profile from the track metrology
+        discriminator: thickness profile anomaly at center AND effect follows the coat module across lots
+        discriminator_type: D1
+        signature: step change after arm calibration or nozzle service
+        status: draft
+        confidence: uncertain
+
+      - mechanism: plasma density peak on axis, center-high etch or dep rate
+        step: etch or PECVD
+        parameters: [rf_power, chamber_pressure, center_gas_zone_flow, electrode_gap, showerhead_condition]
+        check: etch rate radial map from the last chamber qual, chamber match data
+        discriminator: follows chamber ID; correcting the center gas zone flow moves the pattern
+        discriminator_type: D1
+        signature: gradual with chamber seasoning, resets at wet clean
+        status: draft
+        confidence: uncertain
+
+      - mechanism: electrostatic chuck backside He cooling zone imbalance, center hot
+        step: any plasma step on an ESC
+        parameters: [he_backside_pressure_inner, he_backside_pressure_outer, chuck_temp_setpoint, clamp_voltage]
+        check: chuck temperature map and He zone pressures from tool trace
+        discriminator: inner/outer He zone delta out of spec; follows the chuck
+        discriminator_type: D4
+        signature: often a step change after ESC service or a leak develops
+        status: draft
+        confidence: uncertain
+
+  - pattern: Donut
+    physics: annular band of failure at intermediate radius, center and extreme edge unaffected
+    causes:
+      - mechanism: focus ring erosion changing plasma confinement at a fixed radius
+        step: etch
+        parameters: [focus_ring_hours, ring_thickness, rf_power, pressure]
+        check: focus ring age and measured thickness against replacement spec
+        discriminator: band radius tracks ring wear; pattern disappears at ring change
+        discriminator_type: D2
+        signature: worsens monotonically over ring life, hard reset at replacement
+        status: draft
+        confidence: uncertain
+
+      - mechanism: bake plate proximity pin / thermal ring signature
+        step: post-exposure bake or soft bake
+        parameters: [plate_temp_uniformity, proximity_pin_height, pin_ring_radius, bake_time]
+        check: bake plate temperature uniformity map, pin layout drawing
+        discriminator: band radius matches the pin ring radius exactly and repeats wafer to wafer
+        discriminator_type: D3
+        signature: constant once present, appears after plate service
+        status: draft
+        confidence: uncertain
+
+      - mechanism: spin coat radial band from dry-front or airflow disturbance
+        step: litho track, coat
+        parameters: [spin_speed, exhaust_flow, cup_pressure, ambient_humidity]
+        check: resist thickness radial profile, track exhaust balance
+        discriminator: thickness metrology shows a matching band at the same radius
+        discriminator_type: D4
+        signature: sensitive to ambient, may correlate with humidity or shift changes
+        status: draft
+        confidence: uncertain
+
+      - mechanism: RTP or furnace radial thermal profile mismatch
+        step: anneal
+        parameters: [lamp_zone_power, ramp_rate, rotation_speed, pyrometer_calibration]
+        check: lamp zone power balance, pyrometer calibration date
+        discriminator: follows the thermal tool; band radius shifts with zone power trim
+        discriminator_type: D1
+        signature: step change after pyrometer recalibration or lamp replacement
+        status: draft
+        confidence: uncertain
+
   - pattern: Edge-Ring
-    physics: radial non-uniformity concentrated at the wafer periphery
+    physics: radial non-uniformity concentrated at the wafer periphery, continuous ring
     causes:
       - mechanism: edge bead removal failure
         step: litho track, EBR
         parameters: [nozzle_offset, dispense_time, spin_speed]
         check: measure EBR width on last 3 lots, pull nozzle offset log
         discriminator: EBR width out of spec confirms it
+        discriminator_type: D4
         signature: follows the track, not the lot
+        status: kept
         confidence: from_memory
+        note: your own entry, carried over from the project plan
+
       - mechanism: bevel etch rate excursion
         step: bevel etch
         parameters: [chamber_pressure, rf_power, time_since_pm]
         check: chamber match data, last PM date
         discriminator: pattern follows tool ID across lots
+        discriminator_type: D1
         signature: gradual onset over days, not a step change
+        status: kept
         confidence: from_memory
-      # TODO: 1-3 more. Edge clamp / chuck contact at anneal is one you named.
+        note: your own entry, carried over from the project plan
 
-  - pattern: Center
-    physics: # TODO
-    causes: []
+      - mechanism: edge clamp or chuck contact at anneal
+        step: anneal
+        parameters: [clamp_position, clamp_force, chuck_flatness]
+        check: look for repeating angular position across wafers in the lot
+        discriminator: clamp marks repeat at fixed theta
+        discriminator_type: D3
+        signature: identical position wafer to wafer within a lot
+        status: draft
+        confidence: uncertain
+        note: you named this one but did not write the fields. Verify the params.
 
-  - pattern: Donut
-    physics: # TODO
-    causes: []
+      - mechanism: film thickness roll-off at wafer edge in deposition
+        step: PVD or CVD
+        parameters: [shadow_ring_position, target_erosion, edge_exclusion, susceptor_seating]
+        check: thickness map at 3mm and 5mm edge exclusion, shadow ring condition
+        discriminator: thickness falls off inside the ring shadow radius; follows the dep chamber
+        discriminator_type: D4
+        signature: worsens with target life, resets at target change
+        status: draft
+        confidence: uncertain
 
   - pattern: Edge-Loc
-    physics: # TODO
-    causes: []
+    physics: failure confined to one arc at the periphery, not a continuous ring
+    causes:
+      - mechanism: end effector or edge clamp contact at a fixed angular position
+        step: wafer transfer / handling
+        parameters: [robot_teach_offset, end_effector_condition, clamp_position]
+        check: robot teach data, end effector pad wear, contact position vs arc position
+        discriminator: the arc sits at the same angular position on every wafer in the lot
+        discriminator_type: D3
+        signature: appears after a robot teach or end effector swap
+        status: draft
+        confidence: uncertain
+
+      - mechanism: single EBR nozzle sector failure or partial clog
+        step: litho track, EBR
+        parameters: [nozzle_offset, dispense_pressure, nozzle_clean_cycle]
+        check: EBR width measured at multiple angular positions, not just one
+        discriminator: EBR width out of spec at the affected arc only, in spec elsewhere
+        discriminator_type: D4
+        signature: gradual as the nozzle clogs, resets at nozzle clean
+        status: draft
+        confidence: uncertain
+
+      - mechanism: non-uniform flow or dry spot in single-wafer clean
+        step: wet clean / SRD
+        parameters: [chuck_rotation_speed, dispense_arm_sweep, n2_flow, drain_condition]
+        check: arm sweep profile, look for a stationary dispense position
+        discriminator: arc position tracks the dispense arm park position
+        discriminator_type: D3
+        signature: constant while the recipe is unchanged
+        status: draft
+        confidence: uncertain
+
+      - mechanism: edge focus or exposure roll-off in one field region
+        step: litho, expose
+        parameters: [focus_offset, edge_field_exposure, leveling_at_edge]
+        check: focus/leveling map at edge fields, CD at the affected arc
+        discriminator: CD out of spec at the affected edge fields only
+        discriminator_type: D4
+        signature: WEAK - would also follow the scanner, overlaps with D1. Tighten this.
+        status: draft
+        confidence: uncertain
 
   - pattern: Loc
-    physics: # TODO
-    causes: []
+    physics: one localized cluster of failing die in the wafer interior
+    causes:
+      - mechanism: particle drop from chamber flaking
+        step: any deposition or etch chamber
+        parameters: [particle_count_post_qual, time_since_wet_clean, chamber_kwh]
+        check: in-line particle monitor trend, last wet clean date
+        discriminator: cluster position is random lot to lot; particle counts elevated on the same tool
+        discriminator_type: D1
+        signature: worsens with accumulated chamber hours, resets at wet clean
+        status: draft
+        confidence: uncertain
 
-  - pattern: Random
-    physics: # TODO
-    causes: []
+      - mechanism: lift pin or chuck pin contact damage
+        step: any vacuum chuck step
+        parameters: [lift_pin_height, pin_wear, chuck_flatness]
+        check: overlay the cluster position on the pin layout drawing
+        discriminator: cluster sits at a fixed position matching a pin location on every wafer
+        discriminator_type: D3
+        signature: constant position, appears after chuck or pin service
+        status: draft
+        confidence: uncertain
+
+      - mechanism: showerhead hole blockage causing a local dep or etch anomaly
+        step: CVD or etch
+        parameters: [showerhead_hours, hole_condition, gas_flow_uniformity]
+        check: showerhead inspection at the position corresponding to the cluster
+        discriminator: cluster at a fixed position AND follows the chamber, unlike a random particle
+        discriminator_type: D1
+        signature: gradual, worsens until showerhead is replaced
+        status: draft
+        confidence: uncertain
+
+      - mechanism: reticle defect printing into every field
+        step: litho, expose
+        parameters: [reticle_id, last_reticle_inspection, pellicle_condition]
+        check: reticle inspection; check whether failures repeat at the field pitch
+        discriminator: failures repeat at exact field pitch across the wafer, not one cluster
+        discriminator_type: D3
+        signature: constant from the moment the reticle is used, follows reticle ID
+        status: draft
+        confidence: uncertain
+        note: >
+          Flagged as probably belonging elsewhere. A reticle defect produces a
+          repeating grid, not a single Loc cluster. Left in deliberately as a
+          benchmark distractor. Decide whether to reject it.
 
   - pattern: Scratch
-    physics: # TODO
-    causes: []
+    physics: linear or curvilinear track of failing die
+    causes:
+      - mechanism: CMP pad debris or slurry agglomerate dragged across the wafer
+        step: CMP
+        parameters: [slurry_filter_condition, pad_conditioner_state, down_force, slurry_particle_size]
+        check: slurry filter differential pressure, pad conditioning disk condition
+        discriminator: the track is an ARC, and its curvature radius matches the carrier sweep
+        discriminator_type: D3
+        signature: sporadic, often single-wafer rather than whole-lot
+        status: draft
+        confidence: uncertain
+
+      - mechanism: robot end effector drag during transfer
+        step: wafer transfer
+        parameters: [robot_teach_offset, end_effector_pad_wear, transfer_speed, vacuum_level]
+        check: robot teach data, end effector inspection
+        discriminator: the track is STRAIGHT and aligned with the transfer direction
+        discriminator_type: D3
+        signature: repeats at the same position until the robot is retaught
+        status: draft
+        confidence: uncertain
+        note: >
+          Curvature is the discriminator between this and the CMP cause. Arc means
+          CMP, straight means handling. Confirm that is how you actually called it.
+
+      - mechanism: cassette or FOUP contact damage
+        step: storage / transport
+        parameters: [foup_slot_condition, wafer_seating, transport_vibration]
+        check: FOUP slot inspection, whether the damage correlates with slot number
+        discriminator: correlates with waferIndex / slot position rather than process tool
+        discriminator_type: D5
+        signature: specific slots affected repeatedly
+        status: draft
+        confidence: uncertain
+
+      - mechanism: post-CMP brush scrubber damage
+        step: post-CMP clean
+        parameters: [brush_pressure, brush_hours, di_water_flow]
+        check: brush condition and hours, scrubber recipe
+        discriminator: WEAK - hard to separate from CMP pad debris by map alone. Needs work.
+        discriminator_type: D1
+        signature: worsens with brush hours
+        status: draft
+        confidence: uncertain
+
+  - pattern: Random
+    physics: elevated defectivity with no spatial structure
+    causes:
+      - mechanism: ambient particle excursion, filter or FFU failure
+        step: not step-specific, bay level
+        parameters: [bay_particle_count, ffu_status, pressure_differential]
+        check: fab particle monitors for that bay and time window
+        discriminator: multiple unrelated products and tools in the same bay affected in the same window
+        discriminator_type: D2
+        signature: sharp onset, ends when the filter is replaced
+        status: draft
+        confidence: uncertain
+
+      - mechanism: contaminated chemical or slurry lot
+        step: wet process or CMP
+        parameters: [chemical_lot_id, incoming_qc, dispense_date]
+        check: chemical lot genealogy against affected wafers
+        discriminator: follows the chemical lot ID and crosses multiple tools
+        discriminator_type: D1
+        signature: starts and stops exactly at chemical lot boundaries
+        status: draft
+        confidence: uncertain
+
+      - mechanism: probe card or test hardware degradation
+        step: wafer sort
+        parameters: [probe_card_touchdowns, contact_resistance, prober_id, test_head]
+        check: retest a sample of failing die; review probe card touchdown count
+        discriminator: retest passes
+        discriminator_type: D6
+        signature: worsens with touchdown count, resets after probe card clean
+        status: draft
+        confidence: uncertain
+        note: >
+          This one gets missed constantly. A map that looks like random
+          defectivity is often a test problem. Worth putting first, not last.
 
   - pattern: Near-full
-    physics: # TODO
-    causes: []
+    physics: gross failure across most of the wafer
+    causes:
+      - mechanism: wrong recipe run, or misprocessed lot
+        step: any
+        parameters: [recipe_id, mes_route_history, operator_id]
+        check: MES route history for the lot against the intended route
+        discriminator: recipe ID mismatch in MES is definitive
+        discriminator_type: D4
+        signature: affects exactly the misprocessed wafers, no drift
+        status: draft
+        confidence: uncertain
+
+      - mechanism: tool abort or crash mid-process
+        step: any
+        parameters: [alarm_log, process_end_state, interlock_trips]
+        check: tool alarm log at the process timestamp for that lot
+        discriminator: alarm present at exactly that process time
+        discriminator_type: D2
+        signature: single event, sharp
+        status: draft
+        confidence: uncertain
+
+      - mechanism: skipped layer or missing deposition
+        step: any
+        parameters: [mes_route_history, film_thickness]
+        check: measure the film that should be there
+        discriminator: thickness measures at or near zero
+        discriminator_type: D4
+        signature: single event
+        status: draft
+        confidence: uncertain
+
+      - mechanism: probe card not contacting, or wafer sort setup error
+        step: wafer sort
+        parameters: [prober_id, probe_card_id, z_height, contact_resistance]
+        check: retest the wafer on a different prober
+        discriminator: retest passes and the wafer is fine
+        discriminator_type: D6
+        signature: often a whole-boat or whole-shift event on one prober
+        status: draft
+        confidence: uncertain
 
   - pattern: none
     physics: no systematic spatial signature; failures are within normal random yield loss
